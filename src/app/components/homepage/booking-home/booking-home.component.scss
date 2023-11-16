@@ -1,0 +1,117 @@
+@import 'src/scss/main';
+
+.container {
+    color: white;
+    position: relative;
+    background-image: url('../../../../assets/homepage/bg-booking.jpg');
+    background-color: rgba(0, 0, 0, .25);
+    h1 {
+        position: absolute;
+        top: 2em;
+        text-align: center;
+    }
+    .question {
+        top: 5em;
+    }
+    .final-thanks {
+        top: 50%;
+        transform: translateY(-50%);
+        animation: 1s appear linear;
+    }
+    .form {
+        width: 80vw;
+        position: relative;
+        button {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 1.5em 2em;
+            &:hover {
+                background-color: #333;
+                color: white;
+            }
+        }
+        .icon {
+            background-color: white;
+            border-radius: 50%;
+            &:hover {
+                background-color: #333;
+                cursor: pointer;
+                mat-icon {
+                    color: white;
+                }
+            }
+            mat-icon {
+                padding: 1em;
+                color: black;
+                position: relative;
+                left: -50%;
+                top: -50%;
+                transform: translate(25%, -20%);
+            }
+        }
+        .visibie {
+            visibility: visible;
+        }
+        .not-visible {
+            visibility: hidden;
+        }
+        .not-valid {
+            background-color: rgba(255, 255, 255, .25);
+            color: rgba(0, 0, 0, .25);
+        }
+    }
+}
+
+@keyframes appear {
+    0% {
+        top: 5em;
+        opacity: 0;
+    }
+
+    50% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    75% {
+        transform: translateY(-150%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@media(max-width: 700px) {
+    .container {
+        .form {
+            & > *:not(.icon, button) {
+                position: absolute;
+                top: 50%;
+            }
+            .icon {
+                position: relative;
+                top: 10em;
+                &:hover {
+                    background-color: white;
+                    mat-icon {
+                        color: #333;
+                    }
+                }
+            }
+            button {
+                position: relative;
+                top: 11.5em;
+                left: 90%;
+            }
+
+            #guests {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

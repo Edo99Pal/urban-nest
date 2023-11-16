@@ -1,0 +1,55 @@
+@import 'src/scss/main';
+
+.event {
+    width: 80vw;
+    height: 50vh;
+    margin: 0 2.5em;
+    padding: 0 2em;
+    position: relative;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .25);
+    background-blend-mode: darken;
+    transition: all .3s;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, .50);
+        background-blend-mode: lighten;
+        > * {
+            color: black;
+            text-shadow: .5px 0 black;
+        }
+    }
+    h2 {
+        width: 80%;
+        padding: 1em;
+        transition: all .3s;
+    }
+    #date {
+        mat-icon {
+            position: relative;
+            top: 5px;
+        }
+    }
+}
+
+.event-1 {
+    background-image: url('../../../../../assets/activities/activity-1.jpg');
+}
+.event-2 {
+    background-image: url('../../../../../assets/activities/activity-2.jpg');
+}
+.event-3 {
+    background-image: url('../../../../../assets/activities/activity-3.jpg');
+}
+.event-4 {
+    background-image: url('../../../../../assets/activities/activity-4.jpg');
+}
+
+@media(max-width: 700px) {
+    .event {
+        width: 75vw;
+        margin: 2em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

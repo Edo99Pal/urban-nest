@@ -1,0 +1,46 @@
+<div class="container flex-container flex-align-center flex-justify-center">
+    <h1>Bookings</h1>
+    <h1 [ngClass]="questions[currentQuestionIndex].title == 'Thank you!' ? 'final-thanks' : 'question'">{{ questions[currentQuestionIndex].title }}</h1>
+    <div class="content flex-container flex-align-center flex-justify-space-around form">
+        <div [ngClass]="currentQuestionIndex > 0 && questions[currentQuestionIndex].title != 'Thank you!' ? 'visible' : 'not-visible'" class="icon" (click)="onChangeQuestion('back')"><mat-icon>keyboard_arrow_left</mat-icon></div>
+        
+        <form [formGroup]="bookingForm">  
+        <div *ngIf="questions[currentQuestionIndex].title == 'Tell us your full name'">
+            <mat-form-field class="example-full-width">
+              <mat-label>Full Name</mat-label>
+              <input matInput formControlName="fullName" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''" ngDefaultControl>
+            </mat-form-field>
+          </div>
+          <div *ngIf="questions[currentQuestionIndex].title == 'Start Date'">
+            <mat-form-field>
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="startDate" (ngModelChange)="checkValid(currentQuestionIndex) ? onChangeStartDate($event) : ''" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''" [min]="today" >
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''"></mat-datepicker-toggle>
+              <mat-datepicker #picker ngDefaultControl></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div *ngIf="questions[currentQuestionIndex].title == 'End Date'">
+            <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="endDate" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''" [min]="bookingForm.get('startDate')?.value" >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''"></mat-datepicker-toggle>
+                <mat-datepicker #picker ngDefaultControl></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div *ngIf="questions[currentQuestionIndex].title == 'What\'s the number of guests?'">
+            <mat-form-field id="guests">
+                <mat-label>Guests</mat-label>
+                <mat-select formControlName="nOfGuests" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''">
+                  <mat-option *ngFor="let guest of guests" value="{{ guest }}" ngDefaultControl>
+                    {{ guest }}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button [ngClass]="checkValid(currentQuestionIndex) ? 'valid' : 'not-valid'" (click)="checkValid(currentQuestionIndex) ? onSubmitRes() : ''">Submit</button>
+          </div>
+        </form>
+      <div [ngClass]="[currentQuestionIndex < 3 && questions[currentQuestionIndex].title != 'Thank you!' ? 'visible' : 'not-visible', checkValid(currentQuestionIndex) ? 'valid' : 'not-valid']" class="icon" (click)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''"><mat-icon>keyboard_arrow_right</mat-icon></div>
+    </div>
+</div>
