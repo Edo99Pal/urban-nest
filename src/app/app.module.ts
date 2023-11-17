@@ -31,6 +31,11 @@ import { ActivityComponent } from './components/homepage/activities-home/activit
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { AccomodationHomeComponent } from './components/homepage/accommodation-home/accommodation-home.component';
 import { FacilitiesHomeComponent } from './components/homepage/facilities-home/facilities-home.component';
+import { SpecialOffersHomeComponent } from './components/homepage/special-offers-home/special-offers-home.component';
+import { OfferComponent } from './components/homepage/special-offers-home/offer/offer.component';
+import { ReviewsHomeComponent } from './components/homepage/reviews-home/reviews-home.component';
+import { FaqHomeComponent } from './components/homepage/faq-home/faq-home.component';
+import { ContactUsHomeComponent } from './components/homepage/contact-us-home/contact-us-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +56,12 @@ import { FacilitiesHomeComponent } from './components/homepage/facilities-home/f
     ActivityComponent,
     CarouselComponent,
     AccomodationHomeComponent,
-    FacilitiesHomeComponent
+    FacilitiesHomeComponent,
+    SpecialOffersHomeComponent,
+    OfferComponent,
+    ReviewsHomeComponent,
+    FaqHomeComponent,
+    ContactUsHomeComponent
   ],
   imports: [
     BrowserModule,

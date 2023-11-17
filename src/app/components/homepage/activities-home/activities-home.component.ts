@@ -18,6 +18,5 @@ export class ActivitiesHomeComponent implements OnInit {
 
   onChange(index: number) {
     this.currentActivityIndex = index;
-    console.log("currentActivityIndex: ", this.currentActivityIndex);
   }
 }

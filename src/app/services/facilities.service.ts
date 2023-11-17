@@ -108,7 +108,7 @@ export class FacilitiesService {
       category: 'Games and Entertainment',
       details: [
         { name: 'Board games', icon: 'casino' },
-        { name: 'Pool table', icon: 'pool' },
+        { name: 'Pool table', icon: 'brightness_1' },
         { name: 'Gaming consoles', icon: 'sports_esports' }
       ]
     },
@@ -165,7 +165,7 @@ export class FacilitiesService {
       details: [
         { name: 'Enhanced cleaning protocols', icon: 'cleaning_services' },
         { name: 'Sanitation measures', icon: 'sanitizer' },
-        { name: 'Hygiene practices', icon: 'hygiene' }
+        { name: 'Hygiene practices', icon: 'line_style' }
       ]
     },
     {

@@ -18,6 +18,7 @@
                 <div class="detail" *ngFor="let detail of el.details">
                     <p>{{ detail.name }}</p>
                     <mat-icon>{{ detail.icon }}</mat-icon>
+                    <ng-container *ngIf="detail.icon == 'brightness_1'"><mat-icon class="pool-table-1">{{ detail.icon }}</mat-icon><mat-icon class="pool-table-2">{{ detail.icon }}</mat-icon></ng-container>
                 </div>
             </div>
         </div>
