@@ -4,7 +4,8 @@
     color: white;
     position: relative;
     background-image: url('../../../../assets/homepage/bg-accomodation.jpg');
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(255, 255, 255, .50);
+    background-blend-mode: lighten;
     h1 {
         position: absolute;
         top: 2em;

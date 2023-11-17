@@ -10,12 +10,13 @@ import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms'
 export class BookingHomeComponent implements OnInit {
   guests: number[] = [];
   questions: any[] = [];
+  roomTypes: string[] = [];
   currentQuestionIndex: number = 0;
-  formNames = ['fullName', 'startDate', 'endDate', 'nOfGuests'];
   bookingForm = new FormGroup({
     fullName: new FormControl('', [Validators.required, Validators.minLength(6)]),
     startDate: new FormControl(new Date(), [Validators.required]),
     endDate: new FormControl(new Date(), [Validators.required]),
+    roomType: new FormControl('', [Validators.required]),
     nOfGuests: new FormControl(0, [Validators.required])
 
   })
@@ -28,14 +29,15 @@ export class BookingHomeComponent implements OnInit {
     this.guests = this.service.getGuests();
     this.questions = this.service.getFormQuestions();
     this.questions.push({ title: 'Thank you!'});
+    this.roomTypes = this.service.getRoomTypes();
   }
 
-  onChangeStartDate(event: any): void {
+  onChangeStartDate(): void {
     this.bookingForm.get('endDate')?.setValue(this.bookingForm.get('startDate')?.value || new Date());
   }
   onSubmitRes() {
     this.submitRes = true;
-    this.currentQuestionIndex = 4;
+    this.currentQuestionIndex = 5;
     console.log("Data: ", this.bookingForm.get('fullName')?.value, "\n", this.bookingForm.get('startDate')?.value, "\n", this.bookingForm.get('endDate')?.value, "\n", this.bookingForm.get('nOfGuests')?.value);
   }
   onChangeQuestion(direction: string) {
@@ -51,7 +53,8 @@ export class BookingHomeComponent implements OnInit {
     if(index == 0) return this.bookingForm.controls['fullName'].valid && this.fullNameValidator();
     if(index == 1) return this.bookingForm.controls['startDate'].valid;
     if(index == 2) return this.bookingForm.controls['endDate'].valid;
-    if(index == 3) return this.bookingForm.controls['nOfGuests'].valid && this.bookingForm.get('nOfGuests')?.value != 0;
+    if(index == 3) return this.bookingForm.controls['roomType'].valid && this.bookingForm.get('roomType')?.value != '';
+    if(index == 4) return this.bookingForm.controls['nOfGuests'].valid && this.bookingForm.get('nOfGuests')?.value != 0;
     else return false;
   }
 }

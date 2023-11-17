@@ -14,7 +14,7 @@
           <div *ngIf="questions[currentQuestionIndex].title == 'Start Date'">
             <mat-form-field>
               <mat-label>Choose a date</mat-label>
-              <input matInput [matDatepicker]="picker" formControlName="startDate" (ngModelChange)="checkValid(currentQuestionIndex) ? onChangeStartDate($event) : ''" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''" [min]="today" >
+              <input matInput [matDatepicker]="picker" formControlName="startDate" (ngModelChange)="checkValid(currentQuestionIndex) ? onChangeStartDate() : ''" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''" [min]="today" >
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''"></mat-datepicker-toggle>
               <mat-datepicker #picker ngDefaultControl></mat-datepicker>
@@ -29,6 +29,16 @@
                 <mat-datepicker #picker ngDefaultControl></mat-datepicker>
             </mat-form-field>
           </div>
+          <div *ngIf="questions[currentQuestionIndex].title == 'Room Type'">
+            <mat-form-field id="roomtype">
+                <mat-label>Room</mat-label>
+                <mat-select formControlName="roomType" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''">
+                  <mat-option *ngFor="let roomType of roomTypes" value="{{ roomType }}" ngDefaultControl>
+                    {{ roomType }}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
           <div *ngIf="questions[currentQuestionIndex].title == 'What\'s the number of guests?'">
             <mat-form-field id="guests">
                 <mat-label>Guests</mat-label>
@@ -41,6 +51,6 @@
             <button mat-raised-button [ngClass]="checkValid(currentQuestionIndex) ? 'valid' : 'not-valid'" (click)="checkValid(currentQuestionIndex) ? onSubmitRes() : ''">Submit</button>
           </div>
         </form>
-      <div [ngClass]="[currentQuestionIndex < 3 && questions[currentQuestionIndex].title != 'Thank you!' ? 'visible' : 'not-visible', checkValid(currentQuestionIndex) ? 'valid' : 'not-valid']" class="icon" (click)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''"><mat-icon>keyboard_arrow_right</mat-icon></div>
+      <div [ngClass]="[currentQuestionIndex < 4 && questions[currentQuestionIndex].title != 'Thank you!' ? 'visible' : 'not-visible', checkValid(currentQuestionIndex) ? 'valid' : 'not-valid']" class="icon" (click)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''"><mat-icon>keyboard_arrow_right</mat-icon></div>
     </div>
 </div>

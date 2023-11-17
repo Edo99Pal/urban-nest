@@ -16,9 +16,14 @@ export class BookingService {
       title: 'End Date'
     },
     {
+      title: 'Room Type'
+    },
+    {
       title: 'What\'s the number of guests?'
     }
-  ]
+  ];
+
+  roomTypes = ['Dormitory Room', 'Private Room (single)', 'Private Room (Double)', 'Family Room']
 
   constructor() { }
 
@@ -27,5 +32,8 @@ export class BookingService {
   }
   getFormQuestions(): any[] {
     return this.formQuestions;
+  }
+  getRoomTypes(): string[] {
+    return this.roomTypes;
   }
 }

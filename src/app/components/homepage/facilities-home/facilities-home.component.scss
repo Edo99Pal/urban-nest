@@ -4,9 +4,9 @@
     color: white;
     position: relative;
     padding: 10em 5em 3em;
-    background-color: #D6B3FF;
     background-image: url('../../../../assets/homepage/bg-facilities.jpg');
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(255, 165, 0, 0.5);
+    background-blend-mode: lighten;
     h1 {
         position: absolute;
         top: 2em;
