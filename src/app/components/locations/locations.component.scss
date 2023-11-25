@@ -2,7 +2,10 @@
 
 .container {
     position: relative;
-    background-color: #0066CC;
+    background-color: rgba(0, 0, 0, .25);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
     color: white;
     h1 {
         position: absolute;
@@ -13,10 +16,10 @@
         padding: 8em 3em 0 0;
         position: relative;
         app-location {
-            width: 80vw;
+            width: 85vw;
             transition: all 1s;
             position: absolute;
-            top: 30vh;
+            top: 20vh;
             left: -41vw;
         }
         .left {
@@ -31,11 +34,31 @@
     }
 }
 
+.berlin {
+    background-image: url('../../../assets/cities-cover/berlin.jpg');
+    transition: all .5s;
+}
+
+.prague {
+    background-image: url('../../../assets/cities-cover/prague.jpg');
+    transition: all .5s;
+}
+
+.vienna {
+    background-image: url('../../../assets/cities-cover/vienna.jpg');
+    transition: all .5s;
+}
+
+.budapest {
+    background-image: url('../../../assets/cities-cover/budapest.jpg');
+    transition: all .5s;
+}
+
 @media(max-width: 700px) {
     .container {
         .content {
             app-location {
-                left: -32vw;
+                left: -30vw;
                 width: 60vw;
             }
         }

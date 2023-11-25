@@ -172,4 +172,16 @@ a {
 
 .color-white {
     color: white;
+
+    & > * {
+        color: white;
+    }
+}
+
+.color-black {
+    color: $body-text-color;
+    
+    & > * {
+        color: $body-text-color;
+    }
 }

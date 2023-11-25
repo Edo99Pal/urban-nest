@@ -11,10 +11,11 @@ export class LocationsComponent implements OnInit {
   hostels: any[] = [];
   @Input() currentHostelIndex = 1;
 
-  constructor(private service: LocationsService, public pageService: PageChangerService) { }
+  constructor(public service: LocationsService, public pageService: PageChangerService) { }
 
   ngOnInit(): void {
     this.hostels = this.service.getHostels;
+    console.log(this.hostels);
   }
   
   onChange(index: number) {

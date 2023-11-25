@@ -11,6 +11,10 @@ header {
     z-index: 1000;
     #logo {
         margin: 0;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .navbar {
