@@ -12,7 +12,7 @@ export class ReviewsHomeComponent implements OnInit {
   constructor(private service: ReviewsService) { }
 
   ngOnInit(): void {
-    this.reviews = this.service.getReviews();
+    this.reviews = this.service.getReviews;
     for(let i = 3; i < 10; i++) {
       this.reviews.pop(this.reviews[i]);
     }

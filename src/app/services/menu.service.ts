@@ -17,7 +17,7 @@ export class MenuService {
   ];
   constructor() { }
 
-  getMenuItems(): string[] {
+  get getMenuItems(): string[] {
     return this.menuItems;
   }
 }

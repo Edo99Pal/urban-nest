@@ -2,7 +2,7 @@
 
 .container {
     position: relative;
-    background: linear-gradient(135deg, #ff6347, #ff0000);
+    background-color: #FFB266;
     h1 {
         position: absolute;
         top: 2em;
@@ -10,14 +10,30 @@
     }
     .content {
         margin-top: 2em;
-        em {
-            color: white;
-        }
         .review {
             width: 60%;
             padding: 3em;
+            em, mat-icon {
+                transition: all .3s;
+            }
             .rating {
                 color: white;
+                position: relative;
+            }
+            &:hover {
+                cursor: default;
+                em, * > mat-icon {
+                    display: inline-block;
+                    margin: 1em;
+                    transform: scale(1.3);
+                    text-align: center;
+                }
+                .rating {
+                    position: absolute;
+                    left: 50%;
+                    width: 60%;
+                    transform: translateX(-50%);
+                }
             }
         }
         .review:nth-child(even) {

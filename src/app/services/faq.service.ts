@@ -68,7 +68,7 @@ export class FaqService {
   ];
   constructor() { }
   
-  getFaq() {
+  get getFaq() {
     return this.faq;
   }
 }

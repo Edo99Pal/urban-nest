@@ -14,8 +14,8 @@ export class FacilitiesHomeComponent implements OnInit {
   constructor(private service: FacilitiesService) {}
 
   ngOnInit(): void {
-    this.highlights = this.service.getHighLights();
-    this.socialSpacesActivities = this.service.getSocialSpacesActivities();
-    this.services = this.service.getServices();
+    this.highlights = this.service.getHighLights;
+    this.socialSpacesActivities = this.service.getSocialSpacesActivities;
+    this.services = this.service.getServices;
   }
 }

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CitiesService } from './cities.service';
+import { PageChangerService } from './page-changer.service';
 
-describe('CitiesService', () => {
-  let service: CitiesService;
+describe('PageChangerService', () => {
+  let service: PageChangerService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CitiesService);
+    service = TestBed.inject(PageChangerService);
   });
 
   it('should be created', () => {

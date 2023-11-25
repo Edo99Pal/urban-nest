@@ -1,1 +1,43 @@
 @import 'src/scss/main';
+
+.container {
+    position: relative;
+    background-color: #0066CC;
+    color: white;
+    h1 {
+        position: absolute;
+        top: 2em;
+        text-align: center;
+    }
+    .content {
+        padding: 8em 3em 0 0;
+        position: relative;
+        app-location {
+            width: 80vw;
+            transition: all 1s;
+            position: absolute;
+            top: 30vh;
+            left: -41vw;
+        }
+        .left {
+            transform: translateX(-300%);
+        }
+        .right {
+            transform: translateX(300%);
+        }
+        .active {
+            transform: translateX(0);
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    .container {
+        .content {
+            app-location {
+                left: -32vw;
+                width: 60vw;
+            }
+        }
+    }
+}

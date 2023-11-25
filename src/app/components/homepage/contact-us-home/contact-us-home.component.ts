@@ -11,6 +11,6 @@ export class ContactUsHomeComponent implements OnInit {
   constructor(private service: ContactUsService) { }
 
   ngOnInit(): void {
-    this.contactInfo = this.service.getContactInfo();
+    this.contactInfo = this.service.getContactInfo;
   }
 }

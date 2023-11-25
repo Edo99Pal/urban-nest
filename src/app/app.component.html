@@ -4,6 +4,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <app-header></app-header>
-  <app-homepage></app-homepage>
+  <app-header (page)="onPageChange($event)"></app-header>
+  <app-homepage (page)="onPageChange(0)" [ngClass]="pageService.page == 0 ? 'active' : 'not-active'"/>
+  <app-locations (page)="onPageChange(1)" [currentHostelIndex]="pageService.getLocation" [ngClass]="pageService.page == 1 ? 'active' : 'not-active'"/>
+  <app-booking (page)="onPageChange(2)" [ngClass]="pageService.page == 2 ? 'active' : 'not-active'"/>
+  <app-activities (page)="onPageChange(3)" [ngClass]="pageService.page == 3 ? 'active' : 'not-active'"/>
+  <app-accommodation (page)="onPageChange(4)" [ngClass]="pageService.page == 4 ? 'active' : 'not-active'"/>
+  <app-facilities (page)="onPageChange(5)" [ngClass]="pageService.page == 5 ? 'active' : 'not-active'"/>
+  <app-special-offers (page)="onPageChange(6)" [ngClass]="pageService.page == 6 ? 'active' : 'not-active'"/>
+  <app-reviews (page)="onPageChange(7)" [ngClass]="pageService.page == 7 ? 'active' : 'not-active'"/>
+  <app-faq (page)="onPageChange(8)" [ngClass]="pageService.page == 8 ? 'active' : 'not-active'"/>
+  <app-contact-us (page)="onPageChange(9)" [ngClass]="pageService.page == 9 ? 'active' : 'not-active'"/>
 </body>

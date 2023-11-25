@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { PageChangerService } from 'src/app/services/page-changer.service';
 import { SpecialOffersService } from 'src/app/services/special-offers.service';
 
 @Component({
@@ -9,13 +10,17 @@ import { SpecialOffersService } from 'src/app/services/special-offers.service';
 export class SpecialOffersHomeComponent implements OnInit {
   specialOffers: any = [];
   currentOfferIndex = 1;
-  constructor(private service: SpecialOffersService) { }
+
+  constructor(private service: SpecialOffersService, public pageService: PageChangerService) { }
 
   ngOnInit(): void {
-    this.specialOffers = this.service.getSpecialOffers();
+    this.specialOffers = this.service.getSpecialOffers;
   }
 
   onChange(index: number) {
     this.currentOfferIndex = index;
+  }
+  onPageChange(n: number) {
+    this.pageService.onPageChange(n);
   }
 }

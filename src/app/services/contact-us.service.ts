@@ -36,7 +36,7 @@ export class ContactUsService {
   ];
   constructor() { }
 
-  getContactInfo() {
+  get getContactInfo() {
     return this.contactInformation;
   }
 }

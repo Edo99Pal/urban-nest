@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CarouselComponent implements OnInit {
   @Input() items: any = {};
   @Output() indexChange = new EventEmitter<number>();
-  currentIndex = 1;
+  @Input() currentIndex = 1;
 
   constructor() { }
 
@@ -18,8 +18,8 @@ export class CarouselComponent implements OnInit {
 
   onChange(direction: string) {
     if(direction == 'back' && this.currentIndex > 1) this.currentIndex--;
-    else if(direction == 'back') this.currentIndex = 4;
-    else if(direction == 'forward' && this.currentIndex < 4) this.currentIndex++;
+    else if(direction == 'back') this.currentIndex = this.items.length;
+    else if(direction == 'forward' && this.currentIndex < this.items.length) this.currentIndex++;
     else this.currentIndex = 1;
     this.indexChange.emit(this.currentIndex);
   }

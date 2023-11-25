@@ -33,7 +33,7 @@ export class AccomodationService {
 
   constructor() { }
 
-  getRooms() {
+  get getRooms() {
     return this.rooms;
   }
 

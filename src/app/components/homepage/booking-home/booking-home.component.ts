@@ -26,10 +26,10 @@ export class BookingHomeComponent implements OnInit {
   constructor(private service: BookingService) { }
 
   ngOnInit(): void {
-    this.guests = this.service.getGuests();
-    this.questions = this.service.getFormQuestions();
+    this.guests = this.service.getGuests;
+    this.questions = this.service.getFormQuestions;
     this.questions.push({ title: 'Thank you!'});
-    this.roomTypes = this.service.getRoomTypes();
+    this.roomTypes = this.service.getRoomTypes;
   }
 
   onChangeStartDate(): void {

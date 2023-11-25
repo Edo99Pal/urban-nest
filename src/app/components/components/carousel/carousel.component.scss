@@ -18,11 +18,13 @@
     position: absolute;
     top: 400px;
     right: 45vw;
+    z-index: 1000;
 }
 .icon-right {
     position: absolute;
     top: 400px;
     left: 45vw;
+    z-index: 100;
 }
 .index-container {
     display: flex;

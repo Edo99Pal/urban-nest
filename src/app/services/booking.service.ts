@@ -27,13 +27,13 @@ export class BookingService {
 
   constructor() { }
 
-  getGuests(): number[] {
+  get getGuests(): number[] {
     return this.guests;
   }
-  getFormQuestions(): any[] {
+  get getFormQuestions(): any[] {
     return this.formQuestions;
   }
-  getRoomTypes(): string[] {
+  get getRoomTypes(): string[] {
     return this.roomTypes;
   }
 }

@@ -2,7 +2,7 @@
     <h1 class="color-white">Reviews</h1>
     <div class="content flex-container flex-justify-center flex-align-center flex-column">
         <div class="review text-left" *ngFor="let review of reviews">
-            <em>"{{ review.review }}"</em>
+            <em class="color-white">"{{ review.review }}"</em>
             <div class="rating">
                 <mat-icon *ngFor="let star of rating[reviews.indexOf(review)]">star</mat-icon>
             </div>

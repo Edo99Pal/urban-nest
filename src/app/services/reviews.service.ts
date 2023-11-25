@@ -68,7 +68,7 @@ export class ReviewsService {
   ];
   constructor() { }
 
-  getReviews() {
+  get getReviews() {
     return this.reviews;
   }
 }

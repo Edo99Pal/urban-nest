@@ -13,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { AccomodationComponent } from './components/accomodation/accomodation.component';
+import { AccomodationComponent } from './components/accommodation/accommodation.component';
 import { ActivitiesComponent } from './components/activities/activities.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
@@ -28,7 +28,7 @@ import { LocationsHomeComponent } from './components/homepage/locations/location
 import { BookingHomeComponent } from './components/homepage/booking-home/booking-home.component';
 import { ActivitiesHomeComponent } from './components/homepage/activities-home/activities-home.component';
 import { ActivityComponent } from './components/homepage/activities-home/activity/activity.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselComponent } from './components/components/carousel/carousel.component';
 import { AccomodationHomeComponent } from './components/homepage/accommodation-home/accommodation-home.component';
 import { FacilitiesHomeComponent } from './components/homepage/facilities-home/facilities-home.component';
 import { SpecialOffersHomeComponent } from './components/homepage/special-offers-home/special-offers-home.component';
@@ -36,6 +36,7 @@ import { OfferComponent } from './components/homepage/special-offers-home/offer/
 import { ReviewsHomeComponent } from './components/homepage/reviews-home/reviews-home.component';
 import { FaqHomeComponent } from './components/homepage/faq-home/faq-home.component';
 import { ContactUsHomeComponent } from './components/homepage/contact-us-home/contact-us-home.component';
+import { LocationComponent } from './components/locations/location/location.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,8 @@ import { ContactUsHomeComponent } from './components/homepage/contact-us-home/co
     OfferComponent,
     ReviewsHomeComponent,
     FaqHomeComponent,
-    ContactUsHomeComponent
+    ContactUsHomeComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,16 @@
 <header class="flex-container flex-justify-space-between flex-align-center container color-white">
-        <div class="logo">
+        <div class="logo" (click)="onPageChange(0)">
             <h1 id="logo">Urban Nest</h1>
         </div>
         <div class="navbar">
             <ul class="flex-container flex-justify-space-between">
-                <li class="m-3" *ngFor="let el of menuItems" >{{ el }}</li>
+                <li class="m-3" *ngFor="let el of menuItems"  (click)="el == 'Locations' ? onPageChange(menuItems.indexOf(el) + 1, 1) : onPageChange(menuItems.indexOf(el) + 1)">{{ el }}</li>
             </ul>
         </div>
         <div class="navbar-phone">
             <mat-icon>menu</mat-icon>
             <ul class="flex-container flex-justify-space-between not-visible">
-                <li class="m-3" *ngFor="let el of menuItems" >{{ el }}</li>
+                <li class="m-3" *ngFor="let el of menuItems" (click)="onPageChange(menuItems.indexOf(el) + 1)">{{ el }}</li>
             </ul>
         </div>
 </header>

@@ -125,7 +125,7 @@ export class ActivitiesService {
   ]
   constructor() { }
 
-  getEvents() {
+  get getEvents() {
     return this.events;
   }
 

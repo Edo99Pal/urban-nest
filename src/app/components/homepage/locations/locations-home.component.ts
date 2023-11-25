@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CitiesService } from 'src/app/services/cities.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { LocationsService } from 'src/app/services/locations.service';
+import { PageChangerService } from 'src/app/services/page-changer.service';
 
 @Component({
   selector: 'app-locations-home',
@@ -7,11 +8,15 @@ import { CitiesService } from 'src/app/services/cities.service';
   styleUrls: ['./locations-home.component.scss']
 })
 export class LocationsHomeComponent implements OnInit {
-  cities: string[] = [];
+  cities: any[] = [];
 
-  constructor(private service: CitiesService) { }
+  constructor(private service: LocationsService, public pageService: PageChangerService) { }
 
   ngOnInit(): void {
-    this.cities = this.service.getCities();
+    this.cities = this.service.getHostels;
+  }
+
+  onPageChange(n: number, location?: number) {
+    location ? this.pageService.onPageChange(n, location) : this.pageService.onPageChange(n);
   }
 }

@@ -1,7 +1,7 @@
 <div class="content flex-container flex-wrap locations">
-    <div class="{{ el.toLowerCase() }} city" *ngFor="let el of cities">
+    <div class="{{ el.location.toLowerCase() }} city" *ngFor="let el of cities" (click)="onPageChange(1, cities.indexOf(el) + 1)">
         <div class="cover table-center">
-            <h1 class="color-white">{{ el }}</h1>
+            <h1 class="color-white">{{ el.location }}</h1>
         </div>
     </div>
 </div>

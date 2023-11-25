@@ -12,6 +12,6 @@ export class AccomodationHomeComponent implements OnInit {
   constructor(private service: AccomodationService) { }
 
   ngOnInit(): void {
-    this.rooms = this.service.getRooms();
+    this.rooms = this.service.getRooms;
   }
 }

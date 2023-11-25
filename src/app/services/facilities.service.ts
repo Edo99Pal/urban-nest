@@ -179,15 +179,15 @@ export class FacilitiesService {
   ];
   constructor() { }
 
-  getHighLights() {
+  get getHighLights() {
     return this.facilityHighlights;
   }
 
-  getSocialSpacesActivities() {
+  get getSocialSpacesActivities() {
     return this.socialSpacesActivities;
   }
 
-  getServices() {
+  get getServices() {
     return this.services;
   }
 }

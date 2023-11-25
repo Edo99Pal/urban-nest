@@ -36,7 +36,7 @@ export class SpecialOffersService {
   ];
   constructor() { }
 
-  getSpecialOffers() {
+  get getSpecialOffers() {
     return this.specialOffers;
   }
 }

@@ -11,6 +11,6 @@ export class FaqHomeComponent implements OnInit {
   constructor(private service: FaqService) { }
 
   ngOnInit(): void {
-    this.faq = this.service.getFaq();
+    this.faq = this.service.getFaq;
   }
 }
