@@ -37,6 +37,10 @@ import { ReviewsHomeComponent } from './components/homepage/reviews-home/reviews
 import { FaqHomeComponent } from './components/homepage/faq-home/faq-home.component';
 import { ContactUsHomeComponent } from './components/homepage/contact-us-home/contact-us-home.component';
 import { LocationComponent } from './components/locations/location/location.component';
+import { BookingFormComponent } from './components/components/booking-form/booking-form.component';
+
+import { LocationsService } from './services/locations.service';
+import { BookingService } from './services/booking.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +67,8 @@ import { LocationComponent } from './components/locations/location/location.comp
     ReviewsHomeComponent,
     FaqHomeComponent,
     ContactUsHomeComponent,
-    LocationComponent
+    LocationComponent,
+    BookingFormComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +84,6 @@ import { LocationComponent } from './components/locations/location/location.comp
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, [LocationsService, BookingService]]
 })
 export class AppModule { }

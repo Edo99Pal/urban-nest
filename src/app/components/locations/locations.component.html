@@ -1,4 +1,5 @@
 <div class="container flex-container flex-justify-center flex-align-center {{ hostels[currentHostelIndex - 1].location.toLowerCase() }}">
+    <h1 class="page-title">Locations</h1>
     <div class="content flex-container flex-justify-center flex-align-center">
         <app-carousel [items]="hostels" (indexChange)="onChange($event)" [currentIndex]="pageService.getLocation">
             <app-location *ngFor="let hostel of hostels" [hostel]="hostel"  class="hostel" [ngClass]="[currentHostelIndex == hostels.indexOf(hostel) + 1  ? 'active' : '', currentHostelIndex < hostels.indexOf(hostel) + 1  ? 'right' : '', currentHostelIndex > hostels.indexOf(hostel) + 1  ? 'left' : '']"/>

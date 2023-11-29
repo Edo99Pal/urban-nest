@@ -1,17 +1,11 @@
 @import 'src/scss/main';
 
 .container {
-    color: white;
     position: relative;
     padding: 10em 5em 3em;
     background-image: url('../../../../assets/homepage/bg-facilities.jpg');
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
-    h1 {
-        position: absolute;
-        top: 2em;
-        text-align: center;
-    }
     .content {
         color: black;
         width: 100vw;

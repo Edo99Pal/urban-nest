@@ -1,0 +1,118 @@
+@import 'src/scss/main';
+
+
+.form {
+    width: 80vw;
+    position: relative;
+    button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1.5em 2em;
+        &:hover {
+            background-color: #333;
+            color: white;
+        }
+    }
+    .icon {
+        background-color: white;
+        border-radius: 50%;
+        &:hover {
+            background-color: #333;
+            cursor: pointer;
+            mat-icon {
+                color: white;
+            }
+        }
+        mat-icon {
+            padding: 1em;
+            color: black;
+            position: relative;
+            left: -50%;
+            top: -50%;
+            transform: translate(25%, -20%);
+        }
+    }
+    .visibie {
+        visibility: visible;
+    }
+    .not-visible {
+        visibility: hidden;
+    }
+    .not-valid {
+        background-color: rgba(255, 255, 255, .25);
+        color: rgba(0, 0, 0, .25);
+    }
+    h2:not(.final-thanks, .section-title) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5em;
+    }
+    .final-thanks {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: 1s appear linear;
+    }
+    .big {
+        font-size: $extra-large-font-size;
+    }
+}
+
+@keyframes appear {
+0% {
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+50% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+75% {
+    left: 50%;
+    transform: translate(-50%, -150%);
+    opacity: 1;
+}
+100% {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+}
+
+@media(max-width: 700px) {
+    .form {
+        & > *:not(.icon, button) {
+            position: absolute;
+            top: 50%;
+        }
+        .icon {
+            position: relative;
+            top: 10em;
+            &:hover {
+                background-color: white;
+                mat-icon {
+                    color: #333;
+                }
+            }
+        }
+        button {
+            position: relative;
+            top: 11.5em;
+            left: 90%;
+        }
+
+        .option {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

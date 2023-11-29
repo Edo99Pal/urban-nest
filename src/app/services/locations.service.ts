@@ -17,7 +17,7 @@ export class LocationsService {
     },
     {
       location: 'Prague',
-      description: 'Experience the lively atmosphere of Prague at Prague Central Hostel. Affordable accommodation with a friendly staff and cozy common areas.',
+      description: 'Experience the lively atmosphere of Prague at Prague Urban Hostel. Affordable accommodation with a friendly staff and cozy common areas.',
       facilities: ['Free Breakfast', 'Laundry Facilities', 'Kitchen', 'Bicycle Rental'],
       rating: 4.2,
       images: [
@@ -27,7 +27,7 @@ export class LocationsService {
     },
     {
       location: 'Vienna',
-      description: 'Immerse yourself in the cultural charm of Vienna at Vienna Downtown Hostel. Comfortable rooms and a friendly atmosphere await you.',
+      description: 'Immerse yourself in the cultural charm of Vienna at Vienna Urban Hostel. Comfortable rooms and a friendly atmosphere await you.',
       facilities: ['Free City Maps', 'Garden Area', 'Shared Kitchen', 'Luggage Storage'],
       rating: 4.3,
       images: [
@@ -37,7 +37,7 @@ export class LocationsService {
     },
     {
       location: 'Budapest',
-      description: 'Explore the dynamic city of Budapest while staying at Budapest Riverside Hostel. Enjoy breathtaking views and convenient facilities.',
+      description: 'Explore the dynamic city of Budapest while staying at Budapest Urban Hostel. Enjoy breathtaking views and convenient facilities.',
       facilities: ['Free Walking Tours', 'Rooftop Terrace', 'Bicycle Rental', '24-hour Check-in'],
       rating: 4.4,
       images: [

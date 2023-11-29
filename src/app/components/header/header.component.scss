@@ -17,6 +17,22 @@ header {
         }
     }
 
+    .booked {
+        position: relative;
+        &::after {
+            content: '+1';
+            padding: 1px 3px;
+            background-color: orange;
+            color: white;
+            font-size: .5em;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: -1em;
+
+        }
+    }
+
     .navbar {
         ul {
             li {

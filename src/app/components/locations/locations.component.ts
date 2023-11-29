@@ -15,7 +15,7 @@ export class LocationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.hostels = this.service.getHostels;
-    console.log(this.hostels);
+    this.currentHostelIndex = 1;
   }
   
   onChange(index: number) {

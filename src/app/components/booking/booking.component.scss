@@ -1,1 +1,53 @@
 @import 'src/scss/main';
+
+.container {
+    background-color: #ff6b6b;
+    padding: 10em 0 1em;
+    .content {
+        .booking {
+            width: 50%;
+            min-height: 30vh;
+            position: relative;
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 4em;
+        }
+        .booking-empty {
+            h2 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-37.5%, -50%);
+                width: 100%;
+            }
+        }
+        .booking-card {
+            h2 {
+                position: absolute;
+                top: 1em;
+                left: 50%;
+                transform: translateX(-50%);
+                border-bottom: 1px solid white;
+            }
+            .rooms, .dates {
+                width: 100%;
+            }
+            .big {
+                text-transform: uppercase;
+                font-size: $light-font-weight;
+            }
+            .buttons {
+                .button {
+                    border: 1px solid white;
+                    padding: 3px 5px;
+                    border-radius: 5px;
+                    margin-left: 1em;
+                    &:hover, mat-icon:hover {
+                        background-color: white;
+                        color: #ff6b6b;
+                    }
+                }
+            }
+        }
+    }
+}
