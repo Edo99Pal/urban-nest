@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="flex-container flex-justify-space-between dates color-white">
-                <p>Breakfast: {{ this.booking.breakfast ? 'Yes' : 'No' }}</p>
+                <p>Breakfast: {{ this.booking.breakfast == 'true' ? 'Yes' : 'No' }}</p>
                 <p>Total: {{ price.toFixed(2) }}€</p>
             </div>
             <div class="flex-container flex-justify-end buttons">
@@ -33,7 +33,7 @@
                     <mat-icon (click)="onDelete()">delete</mat-icon>
                 </div>
                 <div class="button">
-                    <mat-icon (click)="toggleEdit()">edit</mat-icon>
+                    <mat-icon (click)="edit = true">edit</mat-icon>
                 </div>
             </div>
         </div>
@@ -93,14 +93,14 @@
                 </mat-select>
             </mat-form-field>
             <div class="flex-container flex-justify-end buttons">
-                <div (click)="toggleEdit()" class="button">
-                    <mat-icon>close</mat-icon>
+                <div (click)="edit = false" class="button">
+                    <mat-icon (click)="onCancelEdit()">close</mat-icon>
                 </div>
                 <div class="button">
-                    <mat-icon (click)="toggleEdit()">check</mat-icon>
+                    <mat-icon (click)="onEdit()">check</mat-icon>
                 </div>
             </div>
         </div>
-        <app-booking-form (submit)="getPrice($event)"/>
+        <app-booking-form/>
     </div>
 </div>

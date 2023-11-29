@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BookingService } from 'src/app/services/booking.service';
-import { BehaviorSubject, EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-booking',
@@ -9,9 +8,8 @@ import { BehaviorSubject, EMPTY } from 'rxjs';
 })
 export class BookingComponent implements OnInit {
   booking: any = { };
-  price: number = 0;
   edit: boolean = false;
-
+  price: number = 0;
   guests: number[] = [];
   roomTypes: string[] = [];
   today: Date = new Date();
@@ -22,21 +20,15 @@ export class BookingComponent implements OnInit {
     this.service.booking.subscribe(value => {
       this.booking = value;
     }); 
-    this.price = Math.ceil(Math.abs(this.booking.endDate - this.booking.startDate) / (1000 * 60 * 60 * 24)) * (Math.random() * 60 + 55.5) * this.booking.nOfGuests;
+    this.service.price.subscribe(value => {
+      this.price = value; 
+    });
   }
 
   ngOnInit(): void {
     this.guests = this.service.getGuests;
     this.roomTypes = this.service.getRoomTypes;
     this.locations = this.service.locations;
-  }
-
-  getPrice(n: number) {
-    this.price = n;
-  }
-
-  toggleEdit() {
-    this.edit = !this.edit;
   }
 
   getAvailableEndDate() {
@@ -46,19 +38,17 @@ export class BookingComponent implements OnInit {
   }
 
   onCancelEdit() {
-    this.toggleEdit();
+    this.edit = false;
     this.booking = this.service.booking;
   }
 
   onEdit() {
-    this.toggleEdit();
-    this.service.booking.next(this.booking);
+    this.edit = false;
+    this.service.booking.next(this.booking); 
+    this.service.setPrice = this.service.calculatePrice(this.booking.startDate, this.booking.endDate, this.booking.nOfGuests, this.booking.breakfast);
   }
 
   onDelete() {
   this.service.booking.next(null);
-  this.service.booking.subscribe(value => {
-    this.booking = value;
-  }); 
   }
 }

@@ -42,6 +42,8 @@ export class BookingService {
 
   showed = false;
 
+  price: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   constructor(private _locationsService: LocationsService) { 
     this.locations = this._locationsService.getHostels;
   }
@@ -66,5 +68,18 @@ export class BookingService {
 
   show() {
     this.showed = true;
+  }
+
+  calculatePrice(startDate: Date, endDate: Date, nOfGuests: number, breakfast: boolean) {
+    let days = endDate.getTime() - startDate.getTime();
+    days /= Math.ceil(1000 * 60 * 60 * 24);
+    let guests = nOfGuests;
+    let price =  guests != null && guests != undefined ? days * (Math.random() * 60 + 55.5) * guests : days * (Math.random() * 60 + 55.5);
+
+    return breakfast ? price + days * guests * 10 : price;
+  }
+
+  set setPrice(n: number) {
+    this.price.next(n);
   }
 }

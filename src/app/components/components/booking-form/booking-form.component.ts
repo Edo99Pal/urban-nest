@@ -45,17 +45,12 @@ export class BookingFormComponent implements OnInit {
     if(direction == 'back') this.currentQuestionIndex--;
     else this.currentQuestionIndex++;
   }
+  calculatePrice() {
+    return this.service.calculatePrice(this.bookingForm!.value!.startDate || new Date(), this.bookingForm!.value!.endDate || new Date(), this.bookingForm!.value!.nOfGuests || 1, this.bookingForm!.value!.breakfast || false);
+  }
   fullNameValidator(): any {
     let fullName = this.bookingForm.get('fullName') ? this.bookingForm.get('fullName')?.value?.toString() : '';
     return typeof(fullName) != 'undefined' ? fullName.split(' ')[1].length > 0   : false;
-  }
-  calculatePrice(): number {
-    let booking = this.bookingForm.value;
-    let days = booking!.endDate!.getDate() - booking!.startDate!.getDate();
-    let guests = booking!.nOfGuests;
-    let price =  guests != null && guests != undefined ? days * (Math.random() * 60 + 55.5) * guests : days * (Math.random() * 60 + 55.5);
-
-    return booking!.breakfast ? price + days * 10 : price;
   }
   checkValid(index: number) {
     if(index == 0) return this.bookingForm.controls['fullName'].valid && this.fullNameValidator();
@@ -67,10 +62,10 @@ export class BookingFormComponent implements OnInit {
     if(index == 6) return this.bookingForm.controls['breakfast'].valid;
     else return false;
   }
-  onSubmitRes() {
+  public onSubmitRes() {
     this.submitRes = true;
     this.currentQuestionIndex = 8;
     this.service.booking.next(this.bookingForm.value);
-    this.submit.emit(this.calculatePrice());
+    this.service.setPrice = this.calculatePrice();
   }
 }
