@@ -27,7 +27,12 @@ export class BookingFormComponent implements OnInit {
     breakfast: new FormControl(false, [Validators.required]),
   });
 
-  constructor(private service: BookingService, public pageService: PageChangerService) { }
+  constructor(private service: BookingService, public pageService: PageChangerService) {
+    this.service.booking.subscribe(value => {
+      if(value == null || !value) this.currentQuestionIndex = 0;
+      else this.currentQuestionIndex = 8;
+    })
+  }
 
   ngOnInit(): void {
     this.guests = this.service.getGuests;
@@ -44,6 +49,12 @@ export class BookingFormComponent implements OnInit {
   onChangeQuestion(direction: string) {
     if(direction == 'back') this.currentQuestionIndex--;
     else this.currentQuestionIndex++;
+  }
+  getQuestion() {
+    return this.currentQuestionIndex != 3 ? this.questions[this.currentQuestionIndex].title : this.bookingForm.value.roomType == 'Dormitory Room' ? this.questions[this.currentQuestionIndex][0].title : this.questions[this.currentQuestionIndex][1].title;
+  }
+  getRoom() {
+    return this.bookingForm.get('roomType')!.value == 'Dormitory Room' ? 'Guests' : 'Rooms';
   }
   calculatePrice() {
     return this.service.calculatePrice(this.bookingForm!.value!.startDate || new Date(), this.bookingForm!.value!.endDate || new Date(), this.bookingForm!.value!.nOfGuests || 1, this.bookingForm!.value!.breakfast || false);

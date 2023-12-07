@@ -1,6 +1,6 @@
     <div class="content flex-container flex-align-center flex-justify-space-around form">
       <h2 class="section-title" *ngIf="pageService.page != 0">Book now</h2>
-      <h2 [ngClass]="[questions[currentQuestionIndex].title == 'Thank you!' ? 'final-thanks' : 'question', pageService.page == 0 ? 'big' : '']">{{ questions[currentQuestionIndex].title == 'Confirm?' ? 'The price is ' + calculatePrice().toFixed(2) + ' €. Do you confirm?' : questions[currentQuestionIndex].title }}</h2>
+      <h2 [ngClass]="[questions[currentQuestionIndex].title == 'Thank you!' ? 'final-thanks' : 'question', pageService.page == 0 ? 'big' : '']">{{ questions[currentQuestionIndex].title == 'Confirm?' ? 'The price is ' + calculatePrice().toFixed(2) + ' €. Do you confirm?' : getQuestion() }}</h2>
         <div [ngClass]="currentQuestionIndex > 0 && questions[currentQuestionIndex].title != 'Thank you!' ? 'visible' : 'not-visible'" class="icon" (click)="onChangeQuestion('back')"><mat-icon>keyboard_arrow_left</mat-icon></div>
         
         <form [formGroup]="bookingForm">  
@@ -32,7 +32,7 @@
           </div>
           <div *ngIf="currentQuestionIndex == 3">
             <mat-form-field id="guests">
-                <mat-label>Guests</mat-label>
+                <mat-label>{{ getRoom() }}</mat-label>
                 <mat-select formControlName="nOfGuests" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''">
                   <mat-option *ngFor="let guest of guests" value="{{ guest }}" ngDefaultControl>
                     {{ guest }}
@@ -62,17 +62,17 @@
             <mat-form-field>
                 <mat-label>Do you want breakfast?</mat-label>
                 <mat-select formControlName="breakfast" (keydown.enter)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''">
-                  <mat-option value="false" ngDefaultControl>
+                  <mat-option [value]="false" ngDefaultControl>
                     No
                   </mat-option>
-                  <mat-option value="true" ngDefaultControl>
+                  <mat-option [value]="true" ngDefaultControl>
                     Yes
                   </mat-option>
                 </mat-select>
             </mat-form-field>
           </div>
           <div *ngIf="currentQuestionIndex == 7">
-            <button mat-raised-button (click)="onSubmitRes()">Submit</button>
+            <button mat-raised-button (click)="onSubmitRes()">Confirm</button>
           </div>
         </form>
       <div [ngClass]="[currentQuestionIndex < 7 && questions[currentQuestionIndex].title != 'Thank you!' ? 'visible' : 'not-visible', checkValid(currentQuestionIndex) ? 'valid' : 'not-valid']" class="icon" (click)="checkValid(currentQuestionIndex) ? onChangeQuestion('forward') : ''"><mat-icon>keyboard_arrow_right</mat-icon></div>

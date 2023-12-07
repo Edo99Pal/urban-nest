@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookingService } from 'src/app/services/booking.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalCancelBookingComponent } from '../components/modal-cancel-booking/modal-cancel-booking.component';
 
 @Component({
   selector: 'app-booking',
@@ -9,6 +11,7 @@ import { BookingService } from 'src/app/services/booking.service';
 export class BookingComponent implements OnInit {
   booking: any = { };
   edit: boolean = false;
+  edited: boolean = false;
   price: number = 0;
   guests: number[] = [];
   roomTypes: string[] = [];
@@ -16,7 +19,7 @@ export class BookingComponent implements OnInit {
   submitRes: boolean = false;
   locations: any[] = [];
 
-  constructor(public service: BookingService) {
+  constructor(public service: BookingService, public dialog: MatDialog) {
     this.service.booking.subscribe(value => {
       this.booking = value;
     }); 
@@ -44,11 +47,19 @@ export class BookingComponent implements OnInit {
 
   onEdit() {
     this.edit = false;
+    this.edited = true;
     this.service.booking.next(this.booking); 
     this.service.setPrice = this.service.calculatePrice(this.booking.startDate, this.booking.endDate, this.booking.nOfGuests, this.booking.breakfast);
   }
 
   onDelete() {
-  this.service.booking.next(null);
+    let dialogRef = this.dialog.open(ModalCancelBookingComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == true) {
+        this.service.booking.next(null);
+        this.service.showed = false;
+      }
+    });
   }
 }

@@ -14,6 +14,9 @@ export class PageChangerService {
     this.page = n;
     location ? this.location = location : null;
     this.page == 2 ? this._bookingService.show() : null;
+    window.scrollTo({
+      top: 0
+    });
   }
 
   get getLocation() {

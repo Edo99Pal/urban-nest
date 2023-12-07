@@ -2,7 +2,7 @@
     <h1 class="page-title">Booking</h1>
     <div class="content flex-container flex-justify-center flex-align-center flex-column">
         <div class="booking booking-empty color-white" *ngIf="!booking || booking == null">
-            <h2>Here are shown your bookings</h2>
+            <h2>Here is shown your booking</h2>
         </div>
         <div class="booking booking-card flex-container flex-column color-white" *ngIf="booking && !edit && booking">
             <h2>Your Booking</h2>
@@ -26,7 +26,7 @@
             </div>
             <div class="flex-container flex-justify-space-between dates color-white">
                 <p>Breakfast: {{ this.booking.breakfast == 'true' ? 'Yes' : 'No' }}</p>
-                <p>Total: {{ price.toFixed(2) }}€</p>
+                <p [ngClass]="edited ? 'price' : ''">Total: {{ price.toFixed(2) }}€</p>
             </div>
             <div class="flex-container flex-justify-end buttons">
                 <div class="button">
@@ -84,10 +84,10 @@
             <mat-form-field>
                 <mat-label>Do you want breakfast?</mat-label>
                 <mat-select [(ngModel)]="booking.breakfast">
-                    <mat-option value="false" ngDefaultControl>
+                    <mat-option [value]="false" ngDefaultControl>
                         No
                     </mat-option>
-                    <mat-option value="true" ngDefaultControl>
+                    <mat-option [value]="true" ngDefaultControl>
                         Yes
                     </mat-option>
                 </mat-select>

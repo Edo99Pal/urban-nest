@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { BookingFormComponent } from './components/components/booking-form/booki
 
 import { LocationsService } from './services/locations.service';
 import { BookingService } from './services/booking.service';
+import { ModalCancelBookingComponent } from './components/components/modal-cancel-booking/modal-cancel-booking.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +70,8 @@ import { BookingService } from './services/booking.service';
     FaqHomeComponent,
     ContactUsHomeComponent,
     LocationComponent,
-    BookingFormComponent
+    BookingFormComponent,
+    ModalCancelBookingComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,8 @@ import { BookingService } from './services/booking.service';
     MatNativeDateModule, 
     MatButtonModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent, [LocationsService, BookingService]]

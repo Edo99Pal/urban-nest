@@ -4,6 +4,10 @@
 .form {
     width: 80vw;
     position: relative;
+    .question {
+        width: fit-content;
+        text-align: center;
+    }
     button {
         position: absolute;
         top: 50%;
@@ -88,6 +92,15 @@
 }
 
 @media(max-width: 700px) {
+    .content {
+        .section-title {
+            top: 10% !important;
+        }
+        .final-thanks {
+            width: 60%;
+            text-align: center;
+        }
+    }
     .form {
         & > *:not(.icon, button) {
             position: absolute;

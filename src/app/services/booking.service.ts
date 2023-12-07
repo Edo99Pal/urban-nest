@@ -17,9 +17,14 @@ export class BookingService {
     {
       title: 'Room Type'
     },
-    {
-      title: 'What\'s the number of guests?'
-    },
+    [
+      {
+        title: 'What\'s the number of guests?'
+      },
+      {
+        title: 'what\'s the number of rooms?'
+      }
+    ],
     {
       title: 'Start Date'
     },
@@ -41,6 +46,8 @@ export class BookingService {
   locations: any[] = [];
 
   showed = false;
+
+  randomPriceDay = Math.random() * 60 + 55.5;
 
   price: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
@@ -74,7 +81,7 @@ export class BookingService {
     let days = endDate.getTime() - startDate.getTime();
     days /= Math.ceil(1000 * 60 * 60 * 24);
     let guests = nOfGuests;
-    let price =  guests != null && guests != undefined ? days * (Math.random() * 60 + 55.5) * guests : days * (Math.random() * 60 + 55.5);
+    let price =  guests != null && guests != undefined ? days * this.randomPriceDay * guests : days * this.randomPriceDay;
 
     return breakfast ? price + days * guests * 10 : price;
   }
