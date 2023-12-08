@@ -1,11 +1,11 @@
 @import 'src/scss/main';
 
-
 .form {
     position: relative;
     .question {
         width: fit-content;
         text-align: center;
+        margin-top: 2em;
     }
     button {
         position: absolute;
@@ -78,13 +78,13 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(115%, -50%);
+        transform: translate(110%, -50%);
         animation: 1s appearSmall linear;
     }
 
     .confirmed {
         left: 50%;
-        transform: translateX(115%);
+        transform: translateX(57.5%);
     }
 }
 
@@ -117,24 +117,24 @@
     0% {
         top: 5em;
         left: 50%;
-        transform: translateX(115%);
+        transform: translateX(110%);
         opacity: 0;
     }
 
     50% {
         top: 50%;
         left: 50%;
-        transform: translate(115%, -50%);
+        transform: translate(110%, -50%);
     }
 
     75% {
         left: 50%;
-        transform: translate(115%, -150%);
+        transform: translate(110%, -150%);
         opacity: 1;
     }
     100% {
         left: 50%;
-        transform: translate(115%, -50%);
+        transform: translate(110%, -50%);
     }
 }
 
