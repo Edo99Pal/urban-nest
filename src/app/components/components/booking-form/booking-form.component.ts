@@ -36,6 +36,7 @@ export class BookingFormComponent implements OnInit {
     });
     this.pageService.page.subscribe(value => {
       if(this.pageService.page.value == 2) this.bookingPage = true;
+      else this.bookingPage = false;
     });
     this.pageService.innerWidth.subscribe(value => {
       this.innerWidth = value;
@@ -49,7 +50,6 @@ export class BookingFormComponent implements OnInit {
     this.roomTypes = this.service.getRoomTypes;
     this.locations = this.service.locations;
     this.bookingForm.get('endDate')?.value?.setDate(this.bookingForm.get('startDate')!.value!.getDate() + 1);
-    this.bookingPage = this.pageService.page.value == 2 ? true : false; 
   }
 
   onChangeStartDate(): void {
