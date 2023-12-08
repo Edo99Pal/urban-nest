@@ -6,7 +6,7 @@
 <body>
   <app-header (page)="onPageChange($event)"></app-header>
   <app-homepage (page)="onPageChange(0)" [ngClass]="pageService.page == 0 ? 'active' : 'not-active'"/>
-  <app-locations (page)="onPageChange(1)" [currentHostelIndex]="pageService.getLocation" [ngClass]="pageService.page == 1 ? 'active' : 'not-active'"/>
+  <app-locations (page)="onPageChange(1)" [ngClass]="pageService.page == 1 ? 'active' : 'not-active'"/>
   <app-booking (page)="onPageChange(2)" [ngClass]="pageService.page == 2 ? 'active' : 'not-active'"/>
   <app-activities (page)="onPageChange(3)" [ngClass]="pageService.page == 3 ? 'active' : 'not-active'"/>
   <app-accommodation (page)="onPageChange(4)" [ngClass]="pageService.page == 4 ? 'active' : 'not-active'"/>
@@ -15,4 +15,8 @@
   <app-reviews (page)="onPageChange(7)" [ngClass]="pageService.page == 7 ? 'active' : 'not-active'"/>
   <app-faq (page)="onPageChange(8)" [ngClass]="pageService.page == 8 ? 'active' : 'not-active'"/>
   <app-contact-us (page)="onPageChange(9)" [ngClass]="pageService.page == 9 ? 'active' : 'not-active'"/>
+  <app-location (page)="onPageChange(10)" [hostel]="locationsService.getHostels[0]" [ngClass]="pageService.page == 10 ? 'active' : 'not-active'"/>
+  <app-location (page)="onPageChange(11)" [hostel]="locationsService.getHostels[1]" [ngClass]="pageService.page == 11 ? 'active' : 'not-active'"/>
+  <app-location (page)="onPageChange(12)" [hostel]="locationsService.getHostels[2]" [ngClass]="pageService.page == 12 ? 'active' : 'not-active'"/>
+  <app-location (page)="onPageChange(13)" [hostel]="locationsService.getHostels[3]" [ngClass]="pageService.page == 13 ? 'active' : 'not-active'"/>
 </body>

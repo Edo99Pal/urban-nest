@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageChangerService } from './services/page-changer.service';
+import { LocationsService } from './services/locations.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { PageChangerService } from './services/page-changer.service';
 export class AppComponent implements OnInit {
   title = 'urban-nest';
 
-  constructor(public pageService: PageChangerService) { }
+  constructor(public pageService: PageChangerService, public locationsService: LocationsService) { }
 
   ngOnInit(): void {
   }

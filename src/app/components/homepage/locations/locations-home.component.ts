@@ -16,7 +16,7 @@ export class LocationsHomeComponent implements OnInit {
     this.cities = this.service.getHostels;
   }
 
-  onPageChange(n: number, location?: number) {
-    location ? this.pageService.onPageChange(n, location) : this.pageService.onPageChange(n);
+  onPageChange(n: number) {
+    this.pageService.onPageChange(n);
   }
 }

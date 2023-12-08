@@ -4,7 +4,7 @@
         </div>
         <div class="navbar">
             <ul class="flex-container flex-justify-space-between">
-                <li class="m-3" *ngFor="let el of menuItems"  (click)="el == 'Locations' ? onPageChange(menuItems.indexOf(el) + 1, 1) : onPageChange(menuItems.indexOf(el) + 1)" [ngClass]="el == 'Booking' && bookingService.bookingNotNull() && !bookingService.showed ? 'booked' : ''" >{{ el }}</li>
+                <li class="m-3" *ngFor="let el of menuItems"  (click)="onPageChange(menuItems.indexOf(el) + 1)" [ngClass]="el == 'Booking' && bookingService.bookingNotNull() && !bookingService.showed ? 'booked' : ''" >{{ el }}</li>
             </ul>
         </div>
         <div class="navbar-phone">

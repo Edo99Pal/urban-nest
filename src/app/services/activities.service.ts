@@ -7,6 +7,7 @@ export class ActivitiesService {
   events: any[] = [
     {
       title: 'Cultural Fusion Night: "Around the World in One Evening',
+      location: 'Berlin',
       description: {
         firstParagraph: "Embark on a global journey without leaving the comfort of our hostel! Join us for a magical evening of Cultural Fusion, where we're turning our common areas into a vibrant tapestry of traditions, flavors, and experiences from around the world.",
         sections: 
@@ -49,6 +50,7 @@ export class ActivitiesService {
     },
     {
       title: 'Adventure Package: "Discover the Thrill"',
+      location: 'Prague',
       description: {
         firstP: "Get ready for an adrenaline-pumping adventure with our exclusive Adventure Package. Whether you're an outdoor enthusiast or a thrill-seeker, this package is designed to immerse you in the natural wonders of our surroundings.",
         sections: [
@@ -74,6 +76,7 @@ export class ActivitiesService {
     },
     {
       title: 'Historical Walking Tour: "Step Back in Time"',
+      location: 'Vienna',
       description: {
         firstP: "Embark on a journey through history with our captivating Historical Walking Tour. Immerse yourself in the rich tapestry of our locale as our expert guides lead you through iconic landmarks, hidden gems, and the stories that shaped our past.",
         sections: [
@@ -99,6 +102,7 @@ export class ActivitiesService {
     },
     {
       title: 'Local Food Tasting Experience: "Savor the Flavor"',
+      location: 'Budapest',
       description: {
         firstP: "Indulge your taste buds in a culinary adventure with our Local Food Tasting Experience. Immerse yourself in the diverse flavors of our region as our expert chefs curate a delectable journey through the best local dishes and hidden culinary gems.",
         sections: [

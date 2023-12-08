@@ -9,16 +9,11 @@ import { PageChangerService } from 'src/app/services/page-changer.service';
 })
 export class LocationsComponent implements OnInit { 
   hostels: any[] = [];
-  @Input() currentHostelIndex = 1;
 
   constructor(public service: LocationsService, public pageService: PageChangerService) { }
 
   ngOnInit(): void {
     this.hostels = this.service.getHostels;
-    this.currentHostelIndex = 1;
   }
   
-  onChange(index: number) {
-    this.currentHostelIndex = index;
-  }
 }

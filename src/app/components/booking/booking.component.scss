@@ -12,6 +12,7 @@
             border: 3px solid white;
             border-radius: 20px;
             padding: 4em;
+            backdrop-filter: blur(5px);
         }
         .booking-empty {
             h2 {

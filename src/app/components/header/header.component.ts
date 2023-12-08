@@ -18,8 +18,8 @@ ngOnInit(): void {
   this.menuItems = this.service.getMenuItems;
 }
 
-onPageChange(n: number, location?: number) {
-  location ? this.pageService.onPageChange(n, location) : this.pageService.onPageChange(n);
+onPageChange(n: number) {
+  this.pageService.onPageChange(n);
 }
 
 }
