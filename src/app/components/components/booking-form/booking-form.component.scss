@@ -71,8 +71,10 @@
 
 .small-form {
     width: 50vw;
+    height: 50vh;
     position: relative;
     left: -80%;
+    top: -10vh;
 
     .final-thanks {
         position: absolute;
@@ -80,11 +82,6 @@
         left: 50%;
         transform: translate(110%, -50%);
         animation: 1s appearSmall linear;
-    }
-
-    .confirmed {
-        left: 50%;
-        transform: translateX(57.5%);
     }
 }
 
