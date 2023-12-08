@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { BookingService } from 'src/app/services/booking.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PageChangerService } from 'src/app/services/page-changer.service';
@@ -9,6 +9,7 @@ import { PageChangerService } from 'src/app/services/page-changer.service';
 })
 export class BookingFormComponent implements OnInit {
   @Output() submit = new EventEmitter<number>();
+  bookingPage = false;
   guests: number[] = [];
   questions: any[] = [];
   roomTypes: string[] = [];
@@ -16,6 +17,7 @@ export class BookingFormComponent implements OnInit {
   today: Date = new Date();
   submitRes: boolean = false;
   locations: any[] = [];
+  innerWidth: number = 0;
 
   bookingForm = new FormGroup({
     fullName: new FormControl('', [Validators.required, Validators.minLength(6)]),
@@ -31,6 +33,12 @@ export class BookingFormComponent implements OnInit {
     this.service.booking.subscribe(value => {
       if(value == null || !value) this.currentQuestionIndex = 0;
       else this.currentQuestionIndex = 8;
+    });
+    this.pageService.page.subscribe(value => {
+      if(this.pageService.page.value == 2) this.bookingPage = true;
+    });
+    this.pageService.innerWidth.subscribe(value => {
+      this.innerWidth = value;
     })
   }
 
@@ -41,6 +49,7 @@ export class BookingFormComponent implements OnInit {
     this.roomTypes = this.service.getRoomTypes;
     this.locations = this.service.locations;
     this.bookingForm.get('endDate')?.value?.setDate(this.bookingForm.get('startDate')!.value!.getDate() + 1);
+    this.bookingPage = this.pageService.page.value == 2 ? true : false; 
   }
 
   onChangeStartDate(): void {

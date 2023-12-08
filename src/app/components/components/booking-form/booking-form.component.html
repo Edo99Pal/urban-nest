@@ -1,6 +1,6 @@
-    <div class="content flex-container flex-align-center flex-justify-space-around form">
-      <h2 class="section-title" *ngIf="pageService.page != 0">Book now</h2>
-      <h2 [ngClass]="[questions[currentQuestionIndex].title == 'Thank you!' ? 'final-thanks' : 'question', pageService.page == 0 ? 'big' : '']">{{ questions[currentQuestionIndex].title == 'Confirm?' ? 'The price is ' + calculatePrice().toFixed(2) + ' €. Do you confirm?' : getQuestion() }}</h2>
+    <div class="content flex-container flex-align-center flex-justify-space-around form" [ngClass]="!bookingPage || innerWidth < 700 ? 'big-form' : 'small-form'">
+      <h2 class="section-title" [ngClass]="submitRes ? 'confirmed' : ''" *ngIf="pageService.page.value != 0">Book now</h2>
+      <h2 [ngClass]="[questions[currentQuestionIndex].title == 'Thank you!' ? 'final-thanks' : 'question', pageService.page.value == 0 ? 'big' : '']">{{ questions[currentQuestionIndex].title == 'Confirm?' ? 'The price is ' + calculatePrice().toFixed(2) + ' €. Do you confirm?' : getQuestion() }}</h2>
         <div [ngClass]="currentQuestionIndex > 0 && questions[currentQuestionIndex].title != 'Thank you!' ? 'visible' : 'not-visible'" class="icon" (click)="onChangeQuestion('back')"><mat-icon>keyboard_arrow_left</mat-icon></div>
         
         <form [formGroup]="bookingForm">  

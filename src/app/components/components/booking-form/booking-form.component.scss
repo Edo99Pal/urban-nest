@@ -2,7 +2,6 @@
 
 
 .form {
-    width: 80vw;
     position: relative;
     .question {
         width: fit-content;
@@ -66,29 +65,77 @@
     }
 }
 
+.big-form {
+    width: 80vw;
+}
+
+.small-form {
+    width: 50vw;
+    position: relative;
+    left: -80%;
+
+    .final-thanks {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(115%, -50%);
+        animation: 1s appearSmall linear;
+    }
+
+    .confirmed {
+        left: 50%;
+        transform: translateX(115%);
+    }
+}
+
 @keyframes appear {
-0% {
-    top: 5em;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
+    0% {
+        top: 5em;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    50% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    75% {
+        left: 50%;
+        transform: translate(-50%, -150%);
+        opacity: 1;
+    }
+    100% {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
-50% {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+@keyframes appearSmall {
+    0% {
+        top: 5em;
+        left: 50%;
+        transform: translateX(115%);
+        opacity: 0;
+    }
 
-75% {
-    left: 50%;
-    transform: translate(-50%, -150%);
-    opacity: 1;
-}
-100% {
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    50% {
+        top: 50%;
+        left: 50%;
+        transform: translate(115%, -50%);
+    }
+
+    75% {
+        left: 50%;
+        transform: translate(115%, -150%);
+        opacity: 1;
+    }
+    100% {
+        left: 50%;
+        transform: translate(115%, -50%);
+    }
 }
 
 @media(max-width: 700px) {

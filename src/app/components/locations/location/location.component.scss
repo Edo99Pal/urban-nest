@@ -37,6 +37,9 @@
                 background-image: radial-gradient(circle at center, #436A8E 0%, #FFC917 33%, #cccccc 100%);
             }
             .facilities {
+                h2 {
+                    margin-bottom: 0;
+                }
                 ul {
                     li {
                         list-style: none;
@@ -116,9 +119,11 @@
             .images {
                 justify-content: center;
             }
-            .facilities {
-                h2 {
-                    margin-bottom: 3em;
+            .right {
+                .facilities {
+                    h2 {
+                        margin-bottom: 3em;
+                    }
                 }
             }
         }

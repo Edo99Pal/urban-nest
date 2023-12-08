@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookingService } from 'src/app/services/booking.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalCancelBookingComponent } from '../components/modal-cancel-booking/modal-cancel-booking.component';
+import { PageChangerService } from 'src/app/services/page-changer.service';
 
 @Component({
   selector: 'app-booking',

@@ -19,7 +19,7 @@ ngOnInit(): void {
 }
 
 onPageChange(n: number) {
-  this.pageService.onPageChange(n);
+  this.pageService.onPageChange(n); 
 }
 
 }
