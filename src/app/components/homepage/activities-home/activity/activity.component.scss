@@ -140,4 +140,18 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
+    .small {
+        #title {
+            left: 0;
+        }
+        #location {
+            bottom: 1.5em;
+            left: 0;
+        }
+
+        #date {
+            left: 1em;
+        }
+    }
 }
