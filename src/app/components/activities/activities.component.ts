@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivitiesService } from 'src/app/services/activities.service';
+import { PageChangerService } from 'src/app/services/page-changer.service';
 
 @Component({
   selector: 'app-activities',
@@ -16,7 +17,7 @@ export class ActivitiesComponent implements OnInit {
   viennaEventsNight: any[] = [];
   budapestEventsNight: any[] = [];
 
-  constructor(private service: ActivitiesService) { }
+  constructor(private service: ActivitiesService, public pageService: PageChangerService) { }
 
   ngOnInit() {
     this.berlinEventsDay = this.service.getBerlinEvents.filter(el => el.dayTime);

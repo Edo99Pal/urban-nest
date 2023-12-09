@@ -43,6 +43,7 @@ import { BookingFormComponent } from './components/components/booking-form/booki
 import { LocationsService } from './services/locations.service';
 import { BookingService } from './services/booking.service';
 import { ModalCancelBookingComponent } from './components/components/modal-cancel-booking/modal-cancel-booking.component';
+import { ActivityPageComponent } from './components/activities/activity-page/activity-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,8 @@ import { ModalCancelBookingComponent } from './components/components/modal-cance
     ContactUsHomeComponent,
     LocationComponent,
     BookingFormComponent,
-    ModalCancelBookingComponent
+    ModalCancelBookingComponent,
+    ActivityPageComponent
   ],
   imports: [
     BrowserModule,

@@ -35,9 +35,7 @@ header {
 
     .navbar {
         ul {
-            li {
-                color: $header-text-color;
-                
+            li {                
                 &:hover {
                     cursor: pointer;
                 }
