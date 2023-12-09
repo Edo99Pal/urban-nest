@@ -1,1 +1,7 @@
 @import 'src/scss/main';
+
+.container {
+    padding: 10em;
+    background: linear-gradient(to bottom, #f38181, #f3a36d);
+    background-attachment: fixed;
+}

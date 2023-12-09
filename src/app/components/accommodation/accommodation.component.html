@@ -1,1 +1,12 @@
-<p>accomodation works!</p>
+<div class="container flex-container flex-justify-center flex-align-center color-white">
+    <h1 class="page-title">Accomodation</h1>
+    <div class="content flex-container">
+        <div class="accommodation color-white" *ngFor="let room of accomodations">
+            <h2>{{ room.type }}</h2>
+            <p><strong>Type:</strong> {{ room.type }}</p>
+            <p><strong>Description:</strong> {{ room.description }}</p>
+            <p><strong>Beds:</strong> {{ room.beds }}</p>
+            <p><strong>Availability:</strong> {{ room.availability }} rooms available</p>
+        </div>
+    </div>
+</div>
