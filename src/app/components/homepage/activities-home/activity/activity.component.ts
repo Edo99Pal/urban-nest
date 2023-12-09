@@ -6,8 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./activity.component.scss']
 })
 export class ActivityComponent implements OnInit {
-  @Input() page = 0;
+  @Input() index = 0;
   @Input() activity: any = {}
+  @Input() size: string = '';
 
   constructor() { }
 

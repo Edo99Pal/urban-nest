@@ -3,6 +3,7 @@ import { BookingService } from 'src/app/services/booking.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalCancelBookingComponent } from '../components/modal-cancel-booking/modal-cancel-booking.component';
 import { PageChangerService } from 'src/app/services/page-changer.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-booking',
@@ -19,6 +20,7 @@ export class BookingComponent implements OnInit {
   today: Date = new Date();
   submitRes: boolean = false;
   locations: any[] = [];
+  deleteSubject: Subject<boolean> = new Subject<boolean>();
 
   constructor(public service: BookingService, public dialog: MatDialog) {
     this.service.booking.subscribe(value => {
@@ -60,6 +62,8 @@ export class BookingComponent implements OnInit {
       if(result == true) {
         this.service.booking.next(null);
         this.service.showed = false;
+        this.booking = null;
+        this.deleteSubject.next(true);
       }
     });
   }

@@ -73,10 +73,6 @@ export class BookingService {
     return this.booking.value;
   }
 
-  show() {
-    this.showed = true;
-  }
-
   calculatePrice(startDate: Date, endDate: Date, nOfGuests: number, breakfast: boolean) {
     let days = endDate.getTime() - startDate.getTime();
     days /= Math.ceil(1000 * 60 * 60 * 24);

@@ -2,12 +2,15 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { BookingService } from 'src/app/services/booking.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PageChangerService } from 'src/app/services/page-changer.service';
+import { Observable, Subscription } from 'rxjs';
 @Component({
   selector: 'app-booking-form',
   templateUrl: './booking-form.component.html',
   styleUrls: ['./booking-form.component.scss']
 })
 export class BookingFormComponent implements OnInit {
+  private deleteSubscription: Subscription;
+  @Input() deleted: Observable<boolean>;
   @Output() submit = new EventEmitter<number>();
   bookingPage = false;
   guests: number[] = [];
@@ -31,7 +34,9 @@ export class BookingFormComponent implements OnInit {
 
   constructor(private service: BookingService, public pageService: PageChangerService) {
     this.service.booking.subscribe(value => {
-      if(value == null || !value) this.currentQuestionIndex = 0;
+      if(value == null || !value) {
+        this.currentQuestionIndex = 0;
+      }
       else this.currentQuestionIndex = 8;
     });
     this.pageService.page.subscribe(value => {
@@ -50,6 +55,11 @@ export class BookingFormComponent implements OnInit {
     this.roomTypes = this.service.getRoomTypes;
     this.locations = this.service.locations;
     this.bookingForm.get('endDate')?.value?.setDate(this.bookingForm.get('startDate')!.value!.getDate() + 1);
+    this.deleteSubscription = this.deleted.subscribe(() => this.bookingForm.reset());
+  }
+
+  ngOnDestroy() {
+    this.deleteSubscription.unsubscribe();
   }
 
   onChangeStartDate(): void {
@@ -87,5 +97,7 @@ export class BookingFormComponent implements OnInit {
     this.currentQuestionIndex = 8;
     this.service.booking.next(this.bookingForm.value);
     this.service.setPrice = this.calculatePrice();
+    if(this.pageService.page.value != 2) this.service.showed = false;
+    else this.service.showed = true;
   }
 }

@@ -2,7 +2,7 @@
     <h1 class="page-title">Booking</h1>
     <div class="content flex-container flex-justify-space-between flex-align-center">
         <div class="left">
-            <app-booking-form/>
+            <app-booking-form [deleted]="deleteSubject.asObservable()"/>
         </div>
         <div class="right flex-container flex-justify-center">
             <div class="booking booking-empty color-white" *ngIf="!booking || booking == null">

@@ -14,7 +14,7 @@ export class PageChangerService {
   onPageChange(n: number) {
     this.page.next(n);
     this.innerWidth.next(window.innerWidth);
-    this.page.value == 2 ? this._bookingService.show() : null;
+    this.page.value == 2 ? this._bookingService.showed = true : null;
     window.scrollTo({
       top: 0
     });
