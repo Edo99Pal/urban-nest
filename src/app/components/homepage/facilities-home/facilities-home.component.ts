@@ -6,7 +6,7 @@ import { FacilitiesService } from 'src/app/services/facilities.service';
   styleUrls: ['./facilities-home.component.scss']
 })
 export class FacilitiesHomeComponent implements OnInit {
-  @Input() home: boolean = false;
+  @Input() page: boolean = false;
   highlights: any = [];
   socialSpacesActivities: any = [];
   services: any = [];

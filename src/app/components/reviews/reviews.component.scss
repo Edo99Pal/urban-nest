@@ -1,1 +1,26 @@
 @import 'src/scss/main';
+
+.container {
+    padding: 10em;
+    .content {
+        .review {
+            width: 80vw;
+            margin-bottom: 2em;
+            .top {
+                margin-bottom: 1em;
+            }
+            img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .nickname {
+                font-weight: 700;
+            }
+            .rating {
+                align-self: flex-end;
+            }
+        }
+    }
+}

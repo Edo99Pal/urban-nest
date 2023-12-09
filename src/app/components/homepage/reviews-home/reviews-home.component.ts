@@ -13,9 +13,6 @@ export class ReviewsHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.reviews = this.service.getReviews;
-    for(let i = 3; i < 10; i++) {
-      this.reviews.pop(this.reviews[i]);
-    }
     for(let el of this.reviews) {
       this.rating[this.reviews.indexOf(el)] = [];
       for(let i = 0; i < el.rating; i++) {
