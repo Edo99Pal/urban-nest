@@ -10,6 +10,12 @@
                 margin-bottom: 2em;
             }
         }
+        .info {
+            mat-icon {
+                position: relative;
+                top: .25em;
+            }
+        }
     }
 }
 .event-1 {

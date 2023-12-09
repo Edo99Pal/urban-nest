@@ -1,4 +1,4 @@
-<div class="container flex-container event-{{ index }}">
+<div class="container flex-container flex-justify-center event-{{ index }}">
     <div class="content flex-container flex-column">
         <div class="info">
             <div class="left">
@@ -6,7 +6,7 @@
                 <h2><mat-icon> location_on</mat-icon> {{ activity.location }}</h2>
             </div>
             <div class="right">
-                <p id="date"><mat-icon>today</mat-icon> {{ activity.date.weekDay }} {{ activity.date.month }}-{{ activity.date.day }} {{ activity.date.hour }}:{{ activity.date.minutes }}</p>
+                <p id="date"><mat-icon>today</mat-icon> {{ activity.date.weekDay }} {{ activity.date.month }}-{{ activity.date.day }} <mat-icon>timer</mat-icon> {{ activity.date.hour }}:{{ activity.date.minutes }}</p>
             </div>
         </div>
         <div class="description">
