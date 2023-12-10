@@ -22,9 +22,24 @@
         }
     }
 }
+.bg-white {
+    background-color: white;
+    .page-h1 {
+        padding-top: 1em;
+    }
+    .content {
+        ul {
+            li {
+                & > * {
+                    color: $body-text-color;
+                }
+            }
+        }
 
-.page-h1 {
-    padding-top: 1em;
+        h3 {
+            color: $body-text-color;
+        }
+    }
 }
 
 @media(max-width: 700px) {

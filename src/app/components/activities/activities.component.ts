@@ -28,31 +28,6 @@ export class ActivitiesComponent implements OnInit {
     this.pragueEventsNight = this.service.getPragueEvents.filter(el => !el.dayTime);
     this.viennaEventsNight = this.service.getViennaEvents.filter(el => !el.dayTime);
     this.budapestEventsNight = this.service.getBudapestEvents.filter(el => !el.dayTime);
-
-    for(let el of this.berlinEventsDay) {
-      console.log(el);
-    }
-    for(let el of this.pragueEventsDay) {
-      console.log(el);
-    }
-    for(let el of this.viennaEventsDay) {
-      console.log(el);
-    }
-    for(let el of this.budapestEventsDay) {
-      console.log(el);
-    }
-    for(let el of this.berlinEventsNight) {
-      console.log(el);
-    }
-    for(let el of this.pragueEventsNight) {
-      console.log(el);
-    }
-    for(let el of this.viennaEventsNight) {
-      console.log(el);
-    }
-    for(let el of this.budapestEventsNight) {
-      console.log(el);
-    }
   }
 
 }

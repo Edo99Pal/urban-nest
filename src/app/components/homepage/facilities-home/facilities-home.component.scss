@@ -70,6 +70,10 @@
     }
 }
 
+.bg-clear {
+    background-color: transparent;
+}
+
 @media(max-width: 700px) {
     .container {
         padding: 10em 1em 3em;

@@ -1,4 +1,4 @@
-<div class="container flex-container flex-justify-center flex-align-center color-white">
+<div class="container flex-container flex-justify-center flex-align-center color-white" [ngClass]="page ? 'bg-clear' : ''">
     <h1 class="section-title" [ngClass]="page ? 'home-h1' : ''">Facilities</h1>
     <div class="content flex-container flex-justify-space-between flex-align-center">
         <div class="{{ titles[0].toLowerCase() }} facility flex-container flex-column">

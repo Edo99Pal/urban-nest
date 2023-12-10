@@ -10,11 +10,14 @@ import { PageChangerService } from 'src/app/services/page-changer.service';
 export class ActivitiesHomeComponent implements OnInit {
   activities: any[] = [];
   currentActivityIndex = 1;
+  filteredActivities: any[] = []
 
   constructor(private service: ActivitiesService, public pageService: PageChangerService) { }
 
   ngOnInit(): void {
     this.activities = this.service.getEvents;
+    this.filteredActivities = this.activities.filter(el => el.dayTime && this.activities.indexOf(el) % 3 == 0);
+    console.log(this.filteredActivities);
   }
 
   onChange(index: number) {
@@ -24,4 +27,5 @@ export class ActivitiesHomeComponent implements OnInit {
   onPageChange(n: number) {
     this.pageService.onPageChange(n);
   }
+
 }

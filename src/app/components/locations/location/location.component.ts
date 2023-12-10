@@ -16,7 +16,6 @@ export class LocationComponent implements OnInit {
     for(let i = 0; i < Math.floor(Math.round(this.hostel.rating)); i++) {
       this.rating.push('');
     }
-    console.log(this.service.getCommonFacilities);
   }
 
 }
