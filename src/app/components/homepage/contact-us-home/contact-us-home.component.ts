@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ContactUsService } from 'src/app/services/contact-us.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { ContactUsService } from 'src/app/services/contact-us.service';
   styleUrls: ['./contact-us-home.component.scss']
 })
 export class ContactUsHomeComponent implements OnInit {
+  @Input() page = false;
   contactInfo: any = []
   constructor(private service: ContactUsService) { }
 

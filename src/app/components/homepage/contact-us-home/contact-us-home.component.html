@@ -1,5 +1,5 @@
 <div class="container flex-container flex-justify-center flex-align-center">
-    <h1 class="section-title color-white">Contact Us</h1>
+    <h1 class="section-title color-white" [ngClass]="page ? 'page-h1' : ''">Contact Us</h1>
     <div class="content flex-container flex-justify-center flex-align-center flex-column">
         <ul class="flex-container flex-justify-space-around">
             <li *ngFor="let el of contactInfo">

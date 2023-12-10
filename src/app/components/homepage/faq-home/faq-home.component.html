@@ -1,5 +1,5 @@
 <div class="container flex-container flex-justify-center flex-align-center">
-    <h1 class="section-title color-white">FAQ</h1>
+    <h1 class="section-title color-white" [ngClass]="page ? 'page-h1' : ''">FAQ</h1>
     <div class="content flex-container flex-justify-center flex-align-center flex-column">
         <ul>
             <li *ngFor="let el of faq">

@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./offer.component.scss']
 })
 export class OfferComponent {
-  @Input() page = 0;
+  @Input() index = 0;
   @Input() offer: any = {}
 }

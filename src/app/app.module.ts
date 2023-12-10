@@ -39,11 +39,12 @@ import { FaqHomeComponent } from './components/homepage/faq-home/faq-home.compon
 import { ContactUsHomeComponent } from './components/homepage/contact-us-home/contact-us-home.component';
 import { LocationComponent } from './components/locations/location/location.component';
 import { BookingFormComponent } from './components/components/booking-form/booking-form.component';
+import { ModalCancelBookingComponent } from './components/components/modal-cancel-booking/modal-cancel-booking.component';
+import { ActivityPageComponent } from './components/activities/activity-page/activity-page.component';
+import { OfferPageComponent } from './components/special-offers/offer-page/offer-page.component';
 
 import { LocationsService } from './services/locations.service';
 import { BookingService } from './services/booking.service';
-import { ModalCancelBookingComponent } from './components/components/modal-cancel-booking/modal-cancel-booking.component';
-import { ActivityPageComponent } from './components/activities/activity-page/activity-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +74,8 @@ import { ActivityPageComponent } from './components/activities/activity-page/act
     LocationComponent,
     BookingFormComponent,
     ModalCancelBookingComponent,
-    ActivityPageComponent
+    ActivityPageComponent,
+    OfferPageComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
     <h1 class="section-title">Activities</h1>
     <div class="content flex-container flex-align-center flex-justify-center">
         <app-carousel [items]="activities" (indexChange)="onChange($event)">
-            <app-activity (click)="onPageChange(activities.indexOf(activities) + 10)" *ngFor="let activity of activities" [index]="activities.indexOf(activity) + 1" [activity]="activity" class="activity" [ngClass]="[currentActivityIndex == activities.indexOf(activity) + 1 ? 'active' : '', currentActivityIndex < activities.indexOf(activity) + 1 ? 'right' : '', currentActivityIndex > activities.indexOf(activity) + 1 ? 'left' : '']"/>
+            <app-activity (click)="onPageChange(activities.indexOf(activity) + 14)" *ngFor="let activity of activities" [index]="activities.indexOf(activity) + 1" [activity]="activity" class="activity" [ngClass]="[currentActivityIndex == activities.indexOf(activity) + 1 ? 'active' : '', currentActivityIndex < activities.indexOf(activity) + 1 ? 'right' : '', currentActivityIndex > activities.indexOf(activity) + 1 ? 'left' : '']"/>
         </app-carousel>    
     </div>
 </div>
