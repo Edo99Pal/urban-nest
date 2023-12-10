@@ -10,8 +10,8 @@
             </div>
             <div class="booking booking-card flex-container flex-column color-white" *ngIf="booking && !edit && booking">
                 <h2>Your Booking</h2>
-                <p class="big">{{ this.booking.fullName }}</p>
-                <p class="big">{{ this.booking.location }}</p>
+                <p class="uppercase">{{ this.booking.fullName }}</p>
+                <p class="uppercase">{{ this.booking.location }}</p>
                 <div class="flex-container flex-justify-space-between rooms">
                     <div class="color-white">
                         <p class="roomType">Room type: {{ this.booking.roomType }}</p>
