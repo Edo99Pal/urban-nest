@@ -7,5 +7,9 @@
                 <p class="answer" [ngClass]="!page ? 'color-white' : ''">{{ el.answer }}</p>
             </li>
         </ul>
+        <div *ngIf="page" class="text-center">
+            <p>Do you have other questions?</p>
+            <button mat-raised-button (click)="pageService.onPageChange(9)">Contact Us</button>
+        </div>
     </div>
 </div>
