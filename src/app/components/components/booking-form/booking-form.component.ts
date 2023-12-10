@@ -55,7 +55,12 @@ export class BookingFormComponent implements OnInit {
     this.roomTypes = this.service.getRoomTypes;
     this.locations = this.service.locations;
     this.bookingForm.get('endDate')?.value?.setDate(this.bookingForm.get('startDate')!.value!.getDate() + 1);
-    this.deleteSubscription = this.deleted.subscribe(() => this.bookingForm.reset());
+    this.deleteSubscription = this.deleted.subscribe(() => {
+      this.bookingForm.reset();
+      this.bookingForm.controls['startDate'].setValue(new Date());
+      this.bookingForm.controls['endDate'].setValue(new Date());
+      this.bookingForm.get('endDate')?.value?.setDate(this.bookingForm.get('startDate')!.value!.getDate() + 1);
+    });
   }
 
   ngOnDestroy() {
