@@ -6,8 +6,10 @@
         .review {
             width: 80vw;
             margin-bottom: 2em;
+            position: relative;
             .top {
                 margin-bottom: 1em;
+                margin-right: 5em;
             }
             img {
                 width: 150px;
@@ -19,7 +21,13 @@
                 font-weight: 700;
             }
             .rating {
-                align-self: flex-end;
+                position: absolute;
+                bottom: 0; 
+                right: 0;
+            }
+            .bottom {
+                align-self: center;
+                width: 80%;
             }
         }
     }
