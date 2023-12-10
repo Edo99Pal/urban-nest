@@ -33,6 +33,39 @@ header {
         }
     }
 
+    .booked-small {
+        position: relative;
+        &::after {
+            content: '';
+            padding: 1px;
+            width: 1em;
+            height: 1em;
+            background-color: orange;
+            color: white;
+            font-size: .5em;
+            border-radius: 50%;
+            position: absolute;
+            top: .2em;
+            right: .2em;
+
+        }
+    }
+    .booked-phone {
+        position: relative;
+        &::after {
+            content: '+1';
+            padding: .5em;
+            background-color: orange;
+            color: white;
+            font-size: 1rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 2em;
+            right: 3em;
+
+        }
+    }
+
     .navbar {
         ul {
             li {                
