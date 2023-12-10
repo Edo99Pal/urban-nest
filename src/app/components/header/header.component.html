@@ -8,9 +8,11 @@
             </ul>
         </div>
         <div class="navbar-phone">
-            <mat-icon>menu</mat-icon>
-            <ul class="flex-container flex-justify-space-between not-visible">
-                <li class="m-3" *ngFor="let el of menuItems" (click)="onPageChange(menuItems.indexOf(el) + 1)">{{ el }}</li>
-            </ul>
+            <mat-icon (click)="menuOpen = true">menu</mat-icon>
+            <div class="flex-container flex-align-center phone-menu" [ngClass]="menuOpen ? 'visible' : 'not-visible'">
+                <mat-icon (click)="menuOpen = false; onPageChange(0)">close</mat-icon>
+                <div (click)="menuOpen = false"><mat-icon>home</mat-icon><em class="uppercase">Home</em></div>
+                <div (click)="menuOpen = false" *ngFor="let el of menuItems" (click)="onPageChange(menuItems.indexOf(el) + 1)"><mat-icon>{{matIcons[menuItems.indexOf(el)]}}</mat-icon><em class="uppercase">{{ el }}</em></div>
+            </div>
         </div>
 </header>

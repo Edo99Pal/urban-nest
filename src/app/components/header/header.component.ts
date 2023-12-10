@@ -9,8 +9,20 @@ import { PageChangerService } from 'src/app/services/page-changer.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  menuItems: string[] = [];
   @Output() page = new EventEmitter<number>();
+  menuItems: string[] = [];
+  menuOpen = false;
+  matIcons = [
+    'location_on',
+    'book',
+    'directions_bike',
+    'hotel',
+    'settings_input_component',
+    'local_offer',
+    'rate_review',
+    'question_answer',
+    'contact_support'
+  ]
 
 constructor(private service: MenuService, public pageService: PageChangerService, public bookingService: BookingService) { }
 

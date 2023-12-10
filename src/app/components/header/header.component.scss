@@ -59,12 +59,38 @@ header {
             }
             .visible {
                 display: flex;
-                flex-direction: column;
+                min-height: 100vh;
+                width: 100vw;
+                position: absolute;
+                top: 0; 
+                left: 0;
+                background-color: white;
+                color: $body-text-color;
+                & > mat-icon {
+                    position: absolute;
+                    top: 1em;
+                    right: -2.5em;
+                }
+                & > * {
+                    width: 50%;
+                    position: relative;
+                    text-align: center;
+                    mat-icon {
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        display: block;
+                        transform: scale(2);
+                    }
+                    em {
+                        position: relative;
+                        top: 2.5em;
+                    }
+                }
             }
             .not-visible {
                 display: none;
             }
         }
     }
-    
 }
