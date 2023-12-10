@@ -3,19 +3,12 @@
 .container {
     background: linear-gradient(to right, #C0C0C0, #DCDCDC);
     color: white;
-    h1 {
-        position: absolute;
-        top: 2em;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-    }
     .content {
         position: relative;
         app-locations-home {
             position: absolute;
             left: 0;
-            top: 20vh;
+            top: 10vh;
             width: 100vw;
             transition: all 1s;
         }
