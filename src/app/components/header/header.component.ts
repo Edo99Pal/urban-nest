@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   @Output() page = new EventEmitter<number>();
   menuItems: string[] = [];
   menuOpen = false;
+  animated: boolean[] = [false, false, false, false, false, false, false, false, false, false];
   matIcons = [
     'location_on',
     'book',
@@ -32,6 +33,24 @@ ngOnInit(): void {
 
 onPageChange(n: number) {
   this.pageService.onPageChange(n); 
+}
+
+animation() {
+  for(let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      this.animated[i] = true;
+    }, 100 * i)
+  }
+}
+
+openMenu() {
+  this.menuOpen = true;
+}
+closeMenu() {
+  this.menuOpen = false;
+  for(let i = 0; i < 10; i++) {
+    this.animated[i] = false;
+  }
 }
 
 }

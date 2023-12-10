@@ -57,34 +57,50 @@ header {
             mat-icon {
                 font-size: 1.5em;
             }
+            .bg-white {
+                background-color: white;
+            }
             .visible {
                 display: flex;
                 min-height: 100vh;
-                width: 100vw;
+                min-width: 100vw;
                 position: absolute;
                 top: 0; 
                 left: 0;
-                background-color: white;
                 color: $body-text-color;
                 & > mat-icon {
                     position: absolute;
                     top: 1em;
-                    right: -2.5em;
+                    right: 1em;
+                    z-index: 1000;
                 }
-                & > * {
+                & > *:not(mat-icon) {
+                    background-color: white;
                     width: 50%;
+                    height: 20vh;
+                    border: 1px solid white;
+
+                }
+                & > .left {
                     position: relative;
-                    text-align: center;
-                    mat-icon {
-                        position: absolute;
-                        top: 0;
-                        left: 50%;
-                        display: block;
-                        transform: scale(2);
+                    left: -1000px;
+                    transition: all .1s;
+                }
+                & > .right {
+                    position: relative;
+                    right: -1000px;
+                    transition: all .1s;
+                }
+                @for $i from 1 through 11 {
+                    & > .left.animated:nth-child(#{$i}) {
+                        transition-delay: .05s * ($i) * 2; 
+                        left: 0;                       
                     }
-                    em {
-                        position: relative;
-                        top: 2.5em;
+                }
+                @for $i from 1 through 11 {
+                    & > .right.animated:nth-child(#{$i}) {
+                        transition-delay: .05s * (($i) * 2 + 1); 
+                        right: 0;                       
                     }
                 }
             }

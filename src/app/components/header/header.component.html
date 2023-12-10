@@ -8,11 +8,11 @@
             </ul>
         </div>
         <div class="navbar-phone">
-            <mat-icon (click)="menuOpen = true">menu</mat-icon>
-            <div class="flex-container flex-align-center phone-menu" [ngClass]="menuOpen ? 'visible' : 'not-visible'">
-                <mat-icon (click)="menuOpen = false; onPageChange(0)">close</mat-icon>
-                <div (click)="menuOpen = false"><mat-icon>home</mat-icon><em class="uppercase">Home</em></div>
-                <div (click)="menuOpen = false" *ngFor="let el of menuItems" (click)="onPageChange(menuItems.indexOf(el) + 1)"><mat-icon>{{matIcons[menuItems.indexOf(el)]}}</mat-icon><em class="uppercase">{{ el }}</em></div>
+            <mat-icon (click)="openMenu(); animation()">menu</mat-icon>
+            <div class="flex-container flex-align-center phone-menu" [ngClass]="[menuOpen ? 'visible' : 'not-visible']">
+                <mat-icon (click)="closeMenu()">close</mat-icon>
+                <div (click)="menuOpen = false; onPageChange(0)" class="home left flex-container flex-column flex-justify-center flex-align-center" [ngClass]="animated[0] ? 'animated' : ''"><mat-icon>home</mat-icon><em class="uppercase">Home</em></div>
+                <div (click)="closeMenu()" class="flex-container flex-column flex-justify-center flex-align-center" *ngFor="let el of menuItems" [ngClass]="[animated[menuItems.indexOf(el) + 1] ? 'animated' : '', menuItems.indexOf(el) % 2 == 1 ? 'left' : 'right']" (click)="onPageChange(menuItems.indexOf(el) + 1)"><mat-icon>{{matIcons[menuItems.indexOf(el)]}}</mat-icon><em class="uppercase">{{ el }}</em></div>
             </div>
         </div>
 </header>
