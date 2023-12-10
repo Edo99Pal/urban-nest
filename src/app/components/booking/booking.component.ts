@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalCancelBookingComponent } from '../components/modal-cancel-booking/modal-cancel-booking.component';
 import { PageChangerService } from 'src/app/services/page-changer.service';
 import { Subject } from 'rxjs';
+import { Booking } from '../../models/booking.interface';
 
 @Component({
   selector: 'app-booking',
@@ -11,7 +12,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./booking.component.scss']
 })
 export class BookingComponent implements OnInit {
-  booking: any = { };
+  booking: any = { }
   edit: boolean = false;
   edited: boolean = false;
   price: number = 0;

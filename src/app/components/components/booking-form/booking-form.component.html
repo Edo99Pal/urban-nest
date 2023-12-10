@@ -1,4 +1,4 @@
-    <div class="content flex-container flex-align-center flex-justify-space-around form" [ngClass]="!bookingPage || innerWidth < 700 ? 'big-form' : 'small-form'">
+    <div class="content flex-container flex-align-center flex-justify-space-around form" [ngClass]="!bookingPage || innerWidth < 700 ? 'big-form' : 'small-form'" (window:resize)="onResize($event)">
       <h2 [ngClass]="questions[currentQuestionIndex].title == 'Thank you!' ? 'final-thanks' : 'question'">{{ questions[currentQuestionIndex].title == 'Confirm?' ? 'The price is ' + calculatePrice().toFixed(2) + ' €. Do you confirm?' : getQuestion() }}</h2>
         <div [ngClass]="currentQuestionIndex > 0 && questions[currentQuestionIndex].title != 'Thank you!' ? 'visible' : 'not-visible'" class="icon" (click)="onChangeQuestion('back')"><mat-icon>keyboard_arrow_left</mat-icon></div>
         

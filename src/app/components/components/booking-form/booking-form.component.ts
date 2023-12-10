@@ -62,6 +62,10 @@ export class BookingFormComponent implements OnInit {
     this.deleteSubscription.unsubscribe();
   }
 
+  onResize(event: any) {
+    this.innerWidth = event.target.innerWidth;
+  }
+
   onChangeStartDate(): void {
     this.bookingForm.get('endDate')?.value?.setDate(this.bookingForm.get('startDate')!.value!.getDate() + 1);
   }
