@@ -10,22 +10,23 @@
         }
         .booking {
             width: 100%;
+            height: 100%;
             position: relative;
             top: -20vh;
             min-height: 30vh;
             position: relative;
             border: 3px solid white;
             border-radius: 20px;
-            padding: 4em;
             backdrop-filter: blur(5px);
         }
         .booking-empty {
-            width: 100%;
             h2 {
+                text-align: center;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                margin: 0;
             }
         }
         .booking-card {
