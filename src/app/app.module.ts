@@ -45,6 +45,7 @@ import { OfferPageComponent } from './components/special-offers/offer-page/offer
 
 import { LocationsService } from './services/locations.service';
 import { BookingService } from './services/booking.service';
+
 @NgModule({
   declarations: [
     AppComponent,

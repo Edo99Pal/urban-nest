@@ -11,7 +11,6 @@ import { SpecialOffersService } from './services/special-offers.service';
 })
 export class AppComponent implements OnInit {
   title = 'urban-nest';
-
   constructor(public pageService: PageChangerService, public locationsService: LocationsService, public activitiesService: ActivitiesService, public specialOffersService: SpecialOffersService) { }
 
   ngOnInit(): void {
